@@ -1,0 +1,60 @@
+.dropify-wrapper {
+	border-width: 1px !important;
+	border-radius: 0px !important;
+}
+
+.dropify-wrapper .dropify-message p {
+	font-size: 12px !important;
+}
+
+
+tfoot input {
+	width: 100%;
+	padding: 3px;
+	box-sizing: border-box;
+	font-size: 12px;
+}
+
+thead input {
+	width: 100%;
+	padding: 3px;
+	box-sizing: border-box;
+	font-size: 12px;
+	border-radius: 0px;
+	border-width: 1px;
+}
+
+
+table.dataTable td {
+	font-size: 12px !important;
+}
+
+div.dataTables_wrapper {
+	width: 100% !important;
+	margin: 0 auto;
+	/* overflow: hidden !important; */
+}
+
+.form-control,
+.form-label {
+	font-size: 12px !important;
+}
+
+input.table-filter {
+	border-color: #DDDDDD !important;
+}
+
+.table-container {
+overflow-x: auto !important;
+}
+.embed-responsive {
+    position: relative !important;
+    display: block !important;
+    width: 100% !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+}
+
+.hidden{
+	display: none;
+}

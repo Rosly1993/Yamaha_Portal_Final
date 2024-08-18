@@ -1,0 +1,65 @@
+.error {
+    border: 2px solid #FF4E88;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.875em; /* Smaller font size for error messages */
+    margin-top: 0.25em; /* Space between input and error message */
+}
+
+.form-control.error {
+    border: 2px solid #FF4E88; /* Highlight the input field with a red border */
+}
+/* Adjust the height of the table cells */
+.table-cell {
+    height: 20px; /* Change this value to your desired height */
+    vertical-align: middle; /* Align text vertically in the middle */
+}
+
+/* Apply styles to buttons to ensure they fit well within the cell */
+.btn-primary, .btn-danger {
+    padding: 5px 10px; /* Adjust padding as needed */
+}
+.table_header {
+
+    background-color:#01204E ;
+    color:white ;
+
+}
+.edit-btn {
+
+    color:#615EFC ;
+    font-size: 20px;
+
+}
+.delete-btn {
+
+    color:#FF6969 ;
+    font-size: 20px;
+
+}
+.activate-btn {
+
+    color:#40A578 ;
+    font-size: 20px;
+
+}
+.deactivate-btn {
+
+    color:#FF6969 ;
+    font-size: 20px;
+
+}
+
+.text-danger {
+    color: red;
+}
+
+.text-warning {
+    color: orange; /* Or yellow if preferred */
+}
+
+.text-success {
+    color: green;
+}

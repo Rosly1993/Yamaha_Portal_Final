@@ -1,0 +1,304 @@
+CRITICAL - 2024-08-18 01:00:44 --> Undefined variable $session
+in APPPATH\Controllers\Motorcyclelist.php on line 109.
+ 1 APPPATH\Controllers\Motorcyclelist.php(109): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $session', 'APPPATH\\Controllers\\Motorcyclelist.php', 109)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Motorcyclelist->update('00001')
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Motorcyclelist))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-18 01:04:17 --> Undefined variable $session
+in APPPATH\Controllers\Motorcyclelist.php on line 62.
+ 1 APPPATH\Controllers\Motorcyclelist.php(62): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $session', 'APPPATH\\Controllers\\Motorcyclelist.php', 62)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Motorcyclelist->add()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Motorcyclelist))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-18 01:04:36 --> Undefined variable $session
+in APPPATH\Controllers\Motorcyclelist.php on line 62.
+ 1 APPPATH\Controllers\Motorcyclelist.php(62): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $session', 'APPPATH\\Controllers\\Motorcyclelist.php', 62)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Motorcyclelist->add()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Motorcyclelist))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-18 01:18:38 --> Undefined variable $id
+in APPPATH\Models\Motorcyclelist_model.php on line 28.
+ 1 APPPATH\Models\Motorcyclelist_model.php(28): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $id', 'APPPATH\\Models\\Motorcyclelist_model.php', 28)
+ 2 APPPATH\Controllers\Motorcyclelist.php(117): App\Models\Motorcyclelist_model->update_recordExists([...], '00006')
+ 3 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Motorcyclelist->update('00006')
+ 4 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Motorcyclelist))
+ 5 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-18 09:05:45 --> Call to undefined method App\Models\Motorcyclelist_model::recordExists
+in SYSTEMPATH\Model.php on line 773.
+ 1 APPPATH\Controllers\Motorcyclelist.php(64): CodeIgniter\Model->__call('recordExists', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Motorcyclelist->add()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Motorcyclelist))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-18 09:06:38 --> Call to undefined method App\Models\Motorcyclelist_model::recordExists
+in SYSTEMPATH\Model.php on line 773.
+ 1 APPPATH\Controllers\Motorcyclelist.php(64): CodeIgniter\Model->__call('recordExists', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Motorcyclelist->add()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Motorcyclelist))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-08-18 09:51:30 --> Table 'login_db.tbl_motorcyclecategory' doesn't exist
+CRITICAL - 2024-08-18 09:51:30 --> Table 'login_db.tbl_motorcyclecategory' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `tbl_motorcyclecategory`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `tbl_motorcyclecategory`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `tbl_motorcyclecategory`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tbl_motorcyclecategory`', [], false)
+ 5 SYSTEMPATH\Model.php(222): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Motorcyclecategory.php(160): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Motorcyclecategory->getData()
+ 9 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Motorcyclecategory))
+10 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-08-18 09:51:33 --> Table 'login_db.tbl_motorcyclecategory' doesn't exist
+CRITICAL - 2024-08-18 09:51:33 --> Table 'login_db.tbl_motorcyclecategory' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `tbl_motorcyclecategory`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `tbl_motorcyclecategory`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `tbl_motorcyclecategory`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tbl_motorcyclecategory`', [], false)
+ 5 SYSTEMPATH\Model.php(222): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Motorcyclecategory.php(160): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Motorcyclecategory->getData()
+ 9 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Motorcyclecategory))
+10 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-18 11:00:48 --> Class "App\Models\Motorcyclecategory" not found
+in APPPATH\Controllers\Motorcyclecategory.php on line 43.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Motorcyclecategory->getCategories()
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Motorcyclecategory))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-08-18 11:10:40 --> Unknown column 'DISTINCT' in 'field list'
+CRITICAL - 2024-08-18 11:10:40 --> Unknown column 'DISTINCT' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `DISTINCT` `category`
+FROM `tbl_motorcycle_category`
+WHERE `is_active` = 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `DISTINCT` `category`
+FROM `tbl_motorcycle_category`
+WHERE `is_active` = 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `DISTINCT` `category`
+FROM `tbl_motorcycle_category`
+WHERE `is_active` = 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `DISTINCT` `category`
+FROM `tbl_motorcycle_category`
+WHERE `is_active` = :is_active:', [...], false)
+ 5 APPPATH\Controllers\Motorcyclecategory.php(48): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Motorcyclecategory->getCategories()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Motorcyclecategory))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-08-18 11:10:49 --> Unknown column 'DISTINCT' in 'field list'
+CRITICAL - 2024-08-18 11:10:49 --> Unknown column 'DISTINCT' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `DISTINCT` `category`
+FROM `tbl_motorcycle_category`
+WHERE `is_active` = 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `DISTINCT` `category`
+FROM `tbl_motorcycle_category`
+WHERE `is_active` = 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `DISTINCT` `category`
+FROM `tbl_motorcycle_category`
+WHERE `is_active` = 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `DISTINCT` `category`
+FROM `tbl_motorcycle_category`
+WHERE `is_active` = :is_active:', [...], false)
+ 5 APPPATH\Controllers\Motorcyclecategory.php(48): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Motorcyclecategory->getCategories()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Motorcyclecategory))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-08-18 11:12:50 --> Unknown column 'DISTINCT' in 'field list'
+CRITICAL - 2024-08-18 11:12:50 --> Unknown column 'DISTINCT' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `DISTINCT` `category`
+FROM `tbl_motorcycle_category`
+WHERE `is_active` = 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `DISTINCT` `category`
+FROM `tbl_motorcycle_category`
+WHERE `is_active` = 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `DISTINCT` `category`
+FROM `tbl_motorcycle_category`
+WHERE `is_active` = 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `DISTINCT` `category`
+FROM `tbl_motorcycle_category`
+WHERE `is_active` = :is_active:', [...], false)
+ 5 APPPATH\Controllers\Motorcyclecategory.php(48): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Motorcyclecategory->getCategories()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Motorcyclecategory))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-08-18 11:14:26 --> Unknown column 'DISTINCT' in 'field list'
+CRITICAL - 2024-08-18 11:14:26 --> Unknown column 'DISTINCT' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `DISTINCT` `category`
+FROM `tbl_motorcycle_category`
+WHERE `is_active` = 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `DISTINCT` `category`
+FROM `tbl_motorcycle_category`
+WHERE `is_active` = 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `DISTINCT` `category`
+FROM `tbl_motorcycle_category`
+WHERE `is_active` = 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `DISTINCT` `category`
+FROM `tbl_motorcycle_category`
+WHERE `is_active` = :is_active:', [...], false)
+ 5 APPPATH\Controllers\Motorcyclecategory.php(48): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Motorcyclecategory->getCategories()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Motorcyclecategory))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-18 11:16:44 --> Undefined array key "id"
+in APPPATH\Controllers\Motorcyclecategory.php on line 54.
+ 1 APPPATH\Controllers\Motorcyclecategory.php(54): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'APPPATH\\Controllers\\Motorcyclecategory.php', 54)
+ 2 [internal function]: App\Controllers\Motorcyclecategory->App\Controllers\{closure}([...])
+ 3 APPPATH\Controllers\Motorcyclecategory.php(52): array_map(Object(Closure), [...])
+ 4 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Motorcyclecategory->getCategories()
+ 5 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Motorcyclecategory))
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-18 11:22:37 --> Undefined array key "id"
+in APPPATH\Controllers\Motorcyclecategory.php on line 53.
+ 1 APPPATH\Controllers\Motorcyclecategory.php(53): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'APPPATH\\Controllers\\Motorcyclecategory.php', 53)
+ 2 [internal function]: App\Controllers\Motorcyclecategory->App\Controllers\{closure}([...])
+ 3 APPPATH\Controllers\Motorcyclecategory.php(51): array_map(Object(Closure), [...])
+ 4 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Motorcyclecategory->getCategories()
+ 5 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Motorcyclecategory))
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-18 11:50:45 --> Class "App\Models\CategoryModel" not found
+in APPPATH\Controllers\Motorcyclelist.php on line 100.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Motorcyclelist->edit('00001')
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Motorcyclelist))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-18 11:50:46 --> Class "App\Models\CategoryModel" not found
+in APPPATH\Controllers\Motorcyclelist.php on line 100.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Motorcyclelist->edit('00001')
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Motorcyclelist))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-18 11:50:47 --> Class "App\Models\CategoryModel" not found
+in APPPATH\Controllers\Motorcyclelist.php on line 100.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Motorcyclelist->edit('00001')
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Motorcyclelist))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-18 11:50:47 --> Class "App\Models\CategoryModel" not found
+in APPPATH\Controllers\Motorcyclelist.php on line 100.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Motorcyclelist->edit('00001')
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Motorcyclelist))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-18 11:50:47 --> Class "App\Models\CategoryModel" not found
+in APPPATH\Controllers\Motorcyclelist.php on line 100.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Motorcyclelist->edit('00001')
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Motorcyclelist))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-18 11:50:47 --> Class "App\Models\CategoryModel" not found
+in APPPATH\Controllers\Motorcyclelist.php on line 100.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Motorcyclelist->edit('00001')
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Motorcyclelist))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-18 11:50:53 --> Class "App\Models\CategoryModel" not found
+in APPPATH\Controllers\Motorcyclelist.php on line 100.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Motorcyclelist->edit('00001')
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Motorcyclelist))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-18 11:51:19 --> Class "App\Models\CategoryModel" not found
+in APPPATH\Controllers\Motorcyclelist.php on line 100.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Motorcyclelist->edit('00001')
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Motorcyclelist))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-18 11:52:37 --> Undefined variable $item
+in APPPATH\Views\modals\edit_mclist.php on line 11.
+ 1 APPPATH\Views\modals\edit_mclist.php(11): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $item', 'APPPATH\\Views\\modals\\edit_mclist.php', 11)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\modals\\edit_mclist.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(429): CodeIgniter\View\View->render('modals/edit_mclist', null, true)
+ 5 APPPATH\Views\pages\motorcyclelist.php(79): CodeIgniter\View\View->include('modals/edit_mclist')
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\motorcyclelist.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/motorcyclelist', [], true)
+ 9 APPPATH\Controllers\Motorcyclelist.php(24): view('pages/motorcyclelist', [...])
+10 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Motorcyclelist->index()
+11 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Motorcyclelist))
+12 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-18 11:53:07 --> Undefined variable $item
+in APPPATH\Views\modals\edit_mclist.php on line 15.
+ 1 APPPATH\Views\modals\edit_mclist.php(15): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $item', 'APPPATH\\Views\\modals\\edit_mclist.php', 15)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\modals\\edit_mclist.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(429): CodeIgniter\View\View->render('modals/edit_mclist', null, true)
+ 5 APPPATH\Views\pages\motorcyclelist.php(79): CodeIgniter\View\View->include('modals/edit_mclist')
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\motorcyclelist.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/motorcyclelist', [], true)
+ 9 APPPATH\Controllers\Motorcyclelist.php(24): view('pages/motorcyclelist', [...])
+10 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Motorcyclelist->index()
+11 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Motorcyclelist))
+12 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-18 11:53:22 --> Undefined property: App\Controllers\Motorcyclelist::$motorcyclecategory_model
+in APPPATH\Controllers\Motorcyclelist.php on line 98.
+ 1 APPPATH\Controllers\Motorcyclelist.php(98): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Motorcyclelist::$motorcyclecategory_model', 'APPPATH\\Controllers\\Motorcyclelist.php', 98)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Motorcyclelist->edit('00001')
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Motorcyclelist))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-18 12:06:01 --> Class "App\Models\CategoryModel" not found
+in APPPATH\Controllers\Motorcyclelist.php on line 111.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Motorcyclelist->edit('00001')
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Motorcyclelist))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-18 12:06:02 --> Class "App\Models\CategoryModel" not found
+in APPPATH\Controllers\Motorcyclelist.php on line 111.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Motorcyclelist->edit('00001')
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Motorcyclelist))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-18 12:06:03 --> Class "App\Models\CategoryModel" not found
+in APPPATH\Controllers\Motorcyclelist.php on line 111.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Motorcyclelist->edit('00001')
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Motorcyclelist))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-18 12:06:03 --> Class "App\Models\CategoryModel" not found
+in APPPATH\Controllers\Motorcyclelist.php on line 111.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Motorcyclelist->edit('00001')
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Motorcyclelist))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-18 12:06:03 --> Class "App\Models\CategoryModel" not found
+in APPPATH\Controllers\Motorcyclelist.php on line 111.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Motorcyclelist->edit('00001')
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Motorcyclelist))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-18 12:06:08 --> Class "App\Models\CategoryModel" not found
+in APPPATH\Controllers\Motorcyclelist.php on line 111.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Motorcyclelist->edit('00001')
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Motorcyclelist))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()

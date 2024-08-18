@@ -1,0 +1,24 @@
+CRITICAL - 2023-03-07 09:29:53 --> Class "App\Controllers\Auth_Model" not found
+in APPPATH\Controllers\LoginController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(858): App\Controllers\LoginController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-07 11:12:44 --> Undefined variable $cpassword
+in APPPATH\Controllers\LoginController.php on line 72.
+ 1 APPPATH\Controllers\LoginController.php(72): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cpassword', 'APPPATH\\Controllers\\LoginController.php', 72)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\LoginController->registration()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-07 13:05:01 --> Undefined property: CodeIgniter\View\View::$session
+in APPPATH\Views\pages\home.php on line 11.
+ 1 APPPATH\Views\pages\home.php(11): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$session', 'APPPATH\\Views\\pages\\home.php', 11)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\home.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/home', [], true)
+ 5 APPPATH\Controllers\Main.php(20): view('pages/home', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Main->index()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()

@@ -1,0 +1,838 @@
+<p>In this tutorial, this tutorial can help you to create a <b>Login and Registration</b> using <b>PHP's CodeIgniter 4 Framework</b>. The tutorial aims to provide students and new programmers with a reference for learning to code for developing web applications using CodeIgniter 4. Here, I will be providing the scripts of a simple web application with a <b>Login</b> and <b>Registration</b> feature.</p>
+
+<h2><b>What is the Login and Registration Form?</b></h2>
+
+<p>The <b>Login and Registration Form</b> is one of the most common security features of a website or web application. Users must input the necessary information in the <a href="https://www.sourcecodester.com/tutorial/php/15171/creating-login-form-otp-verification-through-email-php-tutorial">login form </a>in order to access the specific website or pages. The section with a combination of input fields is the same as the <a href="https://www.sourcecodester.com/tutorial/php/15728/secure-login-and-registration-php-using-prepared-statements-tutorial">Registration form</a>, and users must fill it up with information to generate a login ID and password.</p>
+
+<h2><b>How to Create Login and Registration Form in CodeIgniter 4?</b></h2>
+
+<p>The <b>Login and Registration Form</b> can be developed in <a href="https://www.sourcecodester.com/blog/15432/codeigniter-framework-php.html">Codeigniter</a> 4 easily by creating a Login and Registration model, controllers, and views. To give you a better idea of how to achieve this, check out the scripts and instructions below for creating a simple web application with a <b>Login</b> and <b>Registration</b> feature.</p>
+
+<h2><b>Getting Started</b></h2>
+
+<p>Before we start the coding part, please make sure to download and install a virtual server such as <b>XAMPP/WAMP</b> on your local machine. After the successful installation, make sure to start the <b>Apache</b> and <b>MySQL</b> servers. Then download CodeIgniter 4 Framework and place it in <b class="text-danger">htdocs</b> directory for XAMPP and <b class="text-danger">www</b> for WAMP. Visit the <a href="https://codeigniter.com/user_guide/index.html" target="_blank">official documentation site</a> for installation instructions for Codeigniter 4 framework.</p>
+
+<h3><b>Create the App Database</b></h3>
+
+<p>Browse the <b>PHPMyAdmin</b> [http://localhost/phpmyadmin] in your prefered browser and create a new database named <b class="text-danger">login_db</b>.</p>
+
+<h3><b>Setup .env Variables</b></h3>
+
+<h3><b>Create the App Database</b></h3>
+
+<p>Next, setup the database credentials in Codeigniter <b>.env</b> file. The file is located in the root folder of your CI4 project.</p>
+<p>
+<html5>
+#--------------------------------------------------------------------
+# DATABASE
+#--------------------------------------------------------------------
+
+database.default.hostname = localhost
+database.default.database = login_db
+database.default.username = root
+database.default.password = 
+database.default.DBDriver = MySQLi
+database.default.DBPrefix =
+</html5>
+</p>
+
+
+<h3><b>Setup Base URL</b></h3>
+
+<p>Next, update your project's <b class="text-danger">base URL</b> variable located in the <span class="text-danger">app/Config/App.php</span>.</p>
+
+<p>
+<php>
+<?php
+public $baseURL = 'http://localhost/ci4-login-registration';
+</php>
+</p>
+<h3><b>Create DB Table</b></h3>
+<p>Next, let's create the <b class="text-danger">user</b> table of the application. To do that we can use the CI4 spark's <span class="text-danger">migrations</span>. Follow the step below:</p>
+<ol>
+	<li>Open your terminal or command prompt and redirect the working directory to your project's root folder.</li>
+	<li>Run <span class="text-danger">php spark make:migration User</span> to generate a Migration file for User Table. The file will be inserted inside the <span class="text-danger">App&gt;Database&gt;Migrations</span> with the filename format&nbsp;<b class="text-danger">YYYY-mm-dd-#####_Users.php</b>.</li>
+	<li>Then, paste the following script. <br>
+    <php>
+    <?php
+
+    namespace App\Database\Migrations;
+    
+    use CodeIgniter\Database\Migration;
+    
+    class Users extends Migration
+    {
+        public function up()
+        {
+            $this->forge->addField([
+                'id' => [
+                    'type'           => 'INT',
+                    'constraint'     => 30,
+                    'unsigned'       => true,
+                    'auto_increment' => true,
+                ],
+                'firstname' => [
+                    'type'       => 'VARCHAR',
+                    'constraint' => '250',
+                ],
+                'middlename' => [
+                    'type'       => 'VARCHAR',
+                    'constraint' => '250',
+                    'null' => true,
+                    'default' => null
+                ],
+                'lastname' => [
+                    'type'       => 'VARCHAR',
+                    'constraint' => '250',
+                ],
+                'email' => [
+                    'type' => 'TEXT',
+                ],
+                'password' => [
+                    'type' => 'TEXT',
+                ],
+                'created_at datetime default current_timestamp',
+                'updated_at datetime default current_timestamp on update current_timestamp'
+            ]);
+            $this->forge->addKey('id', true);
+            $this->forge->createTable('users');
+        }
+    
+        public function down()
+        {
+            //
+            $this->forge->dropTable('users');
+        }
+    }
+    
+    </php>
+    </li>
+	<li>Lastly, run or execute <span class="text-danger">php spark migrate</span> in your command prompt to create the database folder.</li>
+</ol>
+
+<p>After the successful migration, a new table named <b class="text-danger">users</b> will be added to the database.</p>
+
+<h3><b>Creating the Model</b></h3>
+
+<p><b>Next, let's create the login or users table model. Follow the instruction below.</b></p>
+
+<ol>
+	<li>Open your terminal or command prompt and redirect the working directory to your project's root folder.</li>
+	<li>Run <span class="text-danger">php spark make:model LoginModel</span> to generate a Model file for User Table. The file will be inserted inside the <span class="text-danger">App&gt;Models</span></li>
+	<li>Then, paste the following script. <br>
+    <php>
+    <?php
+    namespace App\Models;
+    
+    use CodeIgniter\Model;
+    
+    class LoginModel extends Model
+    {
+        protected $DBGroup          = 'default';
+        protected $table            = 'users';
+        protected $primaryKey       = 'id';
+        protected $useAutoIncrement = true;
+        protected $insertID         = 0;
+        protected $returnType       = 'array';
+        protected $useSoftDeletes   = false;
+        protected $protectFields    = true;
+        protected $allowedFields    = ['firstname', 'middlename', 'lastname', 'email', 'password'];
+    
+        // Dates
+        protected $useTimestamps = false;
+        protected $dateFormat    = 'datetime';
+        protected $createdField  = 'created_at';
+        protected $updatedField  = 'updated_at';
+        protected $deletedField  = 'deleted_at';
+    
+        // Validation
+        protected $validationRules      = [];
+        protected $validationMessages   = [];
+        protected $skipValidation       = false;
+        protected $cleanValidationRules = true;
+    
+        // Callbacks
+        protected $allowCallbacks = true;
+        protected $beforeInsert   = [];
+        protected $afterInsert    = [];
+        protected $beforeUpdate   = [];
+        protected $afterUpdate    = [];
+        protected $beforeFind     = [];
+        protected $afterFind      = [];
+        protected $beforeDelete   = [];
+        protected $afterDelete    = [];
+    }
+    </php>
+    </li>
+</ol>
+
+<h3><b>Creating the Controller</b></h3>
+
+<p>Next, let's create the login/registration and main/home page controllers. The controllers will be generated inside the <b><span class="text-danger">App&gt;Controllers</span></b> directory.</p>
+<ol>
+    <li>Execute <span class="text-danger">php spark make:controller LoginController</span> and follow the script below. <br>
+    <php>
+        <?php
+
+namespace App\Controllers;
+
+use App\Controllers\BaseController;
+use App\Models\LoginModel;
+
+class LoginController extends BaseController
+{
+    protected $request;
+    protected $loginModel;
+
+    public function __construct()
+    {
+        $this->request = \Config\Services::request();
+        $this->loginModel = new LoginModel;
+    }
+    public function index()
+    {   
+        $data=[];
+        $data['page_title']="Login";
+        $data['data']=$this->request;
+        $session = session();
+        if($this->request->getMethod() == 'post'){
+            $user = $this->loginModel->where('email', $this->request->getPost('email'))->first();
+            if($user){
+                $verify_password  = password_verify($this->request->getPost('password'),$user['password']);
+                if($verify_password){
+                    foreach($user as $k => $v){
+                        $session->set('login_'.$k, $v);
+                    }
+                    return redirect()->to('/Main');
+                }else{
+                    $session->setFlashdata('error','Incorrect Password');
+                }
+            }else{
+                $session->setFlashdata('error','Incorrect Email or Password');
+            }
+        }
+        $data['session'] = $session;
+        return view('login/login', $data);
+    }
+    public function logout(){
+        $session = session();
+        $session->destroy();
+        return redirect()->to('/');
+    }
+
+    public function registration(){
+        $session = session();
+        $data=[];
+        $data['session'] = $session;
+        $data['data'] = $this->request;
+        $data['page_title'] = "Registration";
+        if($this->request->getMethod() == 'post'){
+            $firstname = $this->request->getPost('firstname');
+            $middlename = $this->request->getPost('middlename');
+            $lastname = $this->request->getPost('lastname');
+            $email = $this->request->getPost('email');
+            $password = $this->request->getPost('password');
+            $checkEmail = $this->loginModel->where('email', $email)->countAllResults();
+            if($checkEmail > 0){
+                $session->setFlashdata('error','Email is already taken.');
+            }else{
+                $idata = [  
+                            'firstname' => $firstname,
+                            'middlename' => $middlename,
+                            'lastname' => $lastname,
+                            'email' => $email,
+                            'password' => password_hash($password, PASSWORD_DEFAULT),
+                        ];
+                $save = $this->loginModel->save($idata);
+                if($save){
+                    $session->setFlashdata('success','Your Account has been registered sucessfully.');
+                    return redirect()->to('/');
+                }
+            }
+        }
+        return view('login/registration', $data);
+    }
+}
+
+    </php>
+    </li>
+    <li>Execute <span class="text-danger">php spark make:controller Main</span> and follow the script below. <br>
+    <php>
+<?php
+
+namespace App\Controllers;
+use App\Models\Auth;
+class Main extends BaseController
+{   
+    protected $request;
+
+    public function __construct()
+    {
+        $this->request = \Config\Services::request();
+        $this->session = session();
+        $this->auth_model = new Auth;
+        $this->data = ['session' => $this->session];
+    }
+
+    public function index()
+    {
+        $this->data['page_title']="Home";
+        return view('pages/home', $this->data);
+    }
+
+    public function users(){
+        if($this->session->login_type != 1){
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+        }
+        $this->data['page_title']="Users";
+        $this->data['page'] =  !empty($this->request->getVar('page')) ? $this->request->getVar('page') : 1;
+        $this->data['perPage'] =  10;
+        $this->data['total'] =  $this->auth_model->where("id != '{$this->session->login_id}'")->countAllResults();
+        $this->data['users'] = $this->auth_model->where("id != '{$this->session->login_id}'")->paginate($this->data['perPage']);
+        $this->data['total_res'] = is_array($this->data['users'])? count($this->data['users']) : 0;
+        $this->data['pager'] = $this->auth_model->pager;
+        return view('pages/users/list', $this->data);
+    }
+    public function user_edit($id=''){
+        if($this->session->login_type != 1){
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+        }
+        if(empty($id))
+        return redirect()->to('Main/users');
+        if($this->request->getMethod() == 'post'){
+            extract($this->request->getPost());
+            if($password !== $cpassword){
+                $this->session->setFlashdata('error',"Password does not match.");
+            }else{
+                $udata= [];
+                $udata['name'] = $name;
+                $udata['email'] = $email;
+                $udata['type'] = $type;
+                $udata['status'] = $status;
+                if(!empty($password))
+                $udata['password'] = password_hash($password, PASSWORD_DEFAULT);
+                $update = $this->auth_model->where('id',$id)->set($udata)->update();
+                if($update){
+                    $this->session->setFlashdata('success',"User Details has been updated successfully.");
+                    return redirect()->to('Main/user_edit/'.$id);
+                }else{
+                    $this->session->setFlashdata('error',"User Details has failed to update.");
+                }
+            }
+        }
+
+        $this->data['page_title']="Users";
+        $this->data['user'] = $this->auth_model->where("id ='{$id}'")->first();
+        return view('pages/users/edit', $this->data);
+    }
+    
+    public function user_delete($id=''){
+        if($this->session->login_type != 1){
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+        }
+        if(empty($id)){
+                $this->session->setFlashdata('main_error',"user Deletion failed due to unknown ID.");
+                return redirect()->to('Main/users');
+        }
+        $delete = $this->auth_model->where('id', $id)->delete();
+        if($delete){
+            $this->session->setFlashdata('main_success',"User has been deleted successfully.");
+        }else{
+            $this->session->setFlashdata('main_error',"user Deletion failed due to unknown ID.");
+        }
+        return redirect()->to('Main/users');
+    }
+}      
+    </php>
+    </li>
+</ol>
+
+<h3><b>Creating the Page Layouts</b></h3>
+
+<p>On the <b class="text-danger">App&gt;Views</b> directory create a new directory named <b>layouts</b>. Then, add new <b>PHP</b> files like the following.</p>
+
+<p><span class="text-danger">login_base.php</span></p>
+
+<p>
+<html5>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?= isset($page_title) ? $page_title.' | ' : "" ?><?= env('system_name') ?></title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="<?= base_url('public/assets/css/styles.css') ?>">
+
+    <!-- Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <style>
+        html, body{
+            height:100%;
+            width:100%;
+        }
+        body{
+            display:flex;
+            flex-direction:row;
+            align-items:center;
+            justify-content:center;
+        }
+    </style>
+</head>
+<body class="bg-dark bg-gradient bg-opacity-25">
+    <?= $this->renderSection('content') ?>
+</body>
+<?= $this->renderSection('custom_js') ?>
+</html>
+</html5>
+</p>
+<p><span class="text-danger">main.php</span></p>
+<p>
+<php>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?= isset($page_title) ? $page_title.' | ' : "" ?><?= env('system_name') ?></title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="<?= base_url('public/assets/css/styles.css') ?>">
+
+    <!-- Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    
+</head>
+<body class="bg-dark bg-gradient bg-opacity-25">
+    <?= $this->renderSection('content') ?>
+</body>
+<?= $this->renderSection('custom_js') ?>
+</html>
+</php>
+</p>
+<h3><b>Creating the Custom Stylesheet</b></h3>
+<p>Create a new <b>CSS</b> file on the <b class="text-danger">public&gt;css&gt;</b> and name it as <b class="text-danger">styles.css</b></p>
+<p>
+<css>
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+:root{
+    --secular-font:  'Secular One', sans-serif;
+}
+html,
+body{
+    height: 100%;
+    width: 100%;
+    margin: unset;
+}
+/* Login Wrapper */
+#login-wrapper {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background: #000;
+    overflow-x: hidden;
+    z-index: 0;
+}
+#login-wrapper::before {
+    content: "";
+    position: absolute;
+    left: -165px;
+    top: 0;
+    background: #000000e7;
+    width: 70%;
+    height: 100%;
+    transform: skewX(9deg);
+    z-index: 2;
+    opacity: .8;
+}
+#login-wrapper:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    background: #fff;
+    width: 70%;
+    height: 100%;
+    transform: skewX(9deg);
+    z-index: 1;
+
+}
+#login-wrapper>div{
+    position: relative;
+    z-index: 3;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 2em 0.5em;
+}
+#login-wrapper .login-title{
+    font-size: 2.3rem;
+    font-family: var(--secular-font);
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+#login-wrapper .sub-title{
+    font-size: 1rem;
+    font-family: var(--secular-font);
+    color:#dad8d8;
+}
+
+/* Main Page Wrapper */
+#main-wrapper{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background: #fff;
+    overflow-x: hidden;
+    z-index: 0;
+}
+
+#main-wrapper:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    top: -60px;
+    height: 320px;
+    background: #000000;
+    transform: skewY(5deg);
+    z-index: 2;
+}
+#main-wrapper:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    top: 5px;
+    height: 320px;
+    background: #000000;
+    transform: skewY(5deg);
+    z-index: 1;
+    opacity: .6;
+}
+#content-wrapper{
+    position: relative;
+    z-index:4;
+    padding: 0 3em;
+}
+#main-wrapper .page-title{
+    font-size: 2.3rem;
+    font-family: var(--secular-font);
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+#main-wrapper .sub-title{
+    font-size: 1rem;
+    font-family: var(--secular-font);
+    color:#dad8d8;
+}
+#main-wrapper .title-container{
+    width: 100%;
+    height: 320px;
+    margin-bottom: 50px;
+}
+</css>
+</p>
+
+
+<h3><b>Creating the Pages Content</b></h3>
+
+<p>Next, let's create the login form, registration form, and home page content. On the <b class="text-danger">App&gt;Views</b> directory add 2 new folders named <b>login</b> and <b>pages</b>. Then create the following <b>PHP</b> file scripts.</p>
+
+<p><span class="text-danger">login/login.php</span></p>
+<p>
+<html5>
+<?= $this->extend('layouts/login_base') ?>
+
+<?= $this->section('content') ?>
+<div id="login-wrapper">
+    <div>
+        <div class="row mx-0 justify-content-between align-items-center" style="min-height:100%">
+            <div class="col-6">
+                <div class="login-title text-light text-center">Welcome to Sample Website</div>
+                <div class="sub-title text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+            </div>
+            <div class="col-6">
+                <div class="login-title text-center">Login to Sample Site</div>
+                <hr class="mx-auto border 2 opacity-100 border-dark" style="height:2px; width:25px">
+                <div class="col-lg-9 col-md-10 col-sm-12 col-12 mx-auto mt-3">
+                    <div class="card shadow rounded-0">
+                        <div class="card-body rounded-0">
+                            <div class="container-fluid">
+                                <form action="<?= base_url('login') ?>" id="login-form" method="POST">
+                                    <?php if($session->getFlashdata('error')): ?>
+                                        <div class="alert alert-danger rounded-0 py-1 px-2 mb-3">
+                                            <?= $session->getFlashdata('error') ?>
+                                        </div>
+                                    <?php endif; ?>
+                                    <?php if($session->getFlashdata('success')): ?>
+                                        <div class="alert alert-success rounded-0 py-1 px-2 mb-3">
+                                            <?= $session->getFlashdata('success') ?>
+                                        </div>
+                                    <?php endif; ?>
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label tex-body">Email</label>
+                                        <input type="email" class="form-control rounded-0" id="email" name="email" required="required" placeholder="name@mail.com">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="password" class="form-label tex-body">Password</label>
+                                        <input type="password" class="form-control rounded-0" id="password" name="password" required="required" placeholder="*******">
+                                    </div>
+                                    <div class="mb-3">
+                                        <span class="text-body fw-light"><small>Don't have an Account yet?</small></span>
+                                        <span><a href="<?= base_url('registration') ?>"><small>Register Here</small></a></span>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="col-lg-6 col-md-6 col-sm-12 col-12 mx-auto">
+                                            <button class="btn btn-dark bg-gradient rounded-pill w-100 fw-bolder">Login</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<?= $this->endSection() ?>
+</html5>
+</p>
+<p><span class="text-danger">login/registration.php</span></p>
+<p>
+<html5>
+<?= $this->extend('layouts/login_base') ?>
+
+<?= $this->section('content') ?>
+<div id="login-wrapper">
+    <div>
+        <div class="row mx-0 justify-content-between align-items-center">
+            <div class="col-6">
+                <div class="login-title text-light text-center">Welcome to Sample Website</div>
+                <div class="sub-title text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+            </div>
+            <div class="col-6">
+                <div class="login-title text-center">Create an Account</div>
+                <hr class="mx-auto border 2 opacity-100 border-dark" style="height:2px; width:25px">
+                <div class="col-lg-9 col-md-10 col-sm-12 col-12 mx-auto mt-3" style="min-height:100%">
+                    <div class="card shadow rounded-0">
+                        <div class="card-body rounded-0">
+                            <div class="container-fluid">
+                                <form action="" id="login-form" method="POST">
+                                    <?php if($session->getFlashdata('error')): ?>
+                                        <div class="alert alert-danger rounded-0 mb-3">
+                                            <?= $session->getFlashdata('error') ?>
+                                        </div>
+                                    <?php endif; ?>
+                                    <?php if($session->getFlashdata('success')): ?>
+                                        <div class="alert alert-success rounded-0 mb-3">
+                                            <?= $session->getFlashdata('success') ?>
+                                        </div>
+                                    <?php endif; ?>
+                                    <div class="mb-3">
+                                        <label for="firstname" class="form-label tex-body">First Name</label>
+                                        <input type="firstname" class="form-control rounded-0" id="firstname" name="firstname" required="required" placeholder="Mark">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="middlename" class="form-label tex-body">Middle Name</label>
+                                        <input type="middlename" class="form-control rounded-0" id="middlename" name="middlename"placeholder="optional">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="lastname" class="form-label tex-body">Last Name</label>
+                                        <input type="lastname" class="form-control rounded-0" id="lastname" name="lastname" required="required" placeholder="Cooper">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label tex-body">Email</label>
+                                        <input type="email" class="form-control rounded-0" id="email" name="email" required="required" placeholder="mcooper@mail.com">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="password" class="form-label tex-body">Password</label>
+                                        <input type="password" class="form-control rounded-0" id="password" name="password" required="required" placeholder="*******">
+                                    </div>
+                                    <div class="mb-3">
+                                        <span class="text-body fw-light"><small>Already have an Account?</small></span>
+                                        <span><a href="<?= base_url() ?>"><small>Login Here</small></a></span>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="col-lg-6 col-md-6 col-sm-12 col-12 mx-auto">
+                                            <button class="btn btn-dark bg-gradient rounded-pill w-100 fw-bolder">Login</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<?= $this->endSection() ?>
+</html5>
+</p>
+<p><span class="text-danger">pages/home.php</span></p>
+<p>
+<html5>
+<?= $this->extend('layouts/main') ?>
+
+<?= $this->section('content') ?>
+<div id="main-wrapper">
+    <div id="content-wrapper">
+        <div class="title-container d-flex flex-column justify-content-center align-items-center">
+            <div class="page-title text-center text-light">Sample Website Only</div>
+            <div class="sub-title text-center">Welcome back <?= ucwords($session->get('login_firstname')." " . $session->get('login_lastname')) ?>!</div>
+        </div>
+    </div>
+    <h2 class="text-center">Your Account Details</h2>
+    <hr class="mx-auto border 2 opacity-100 border-dark" style="height:2px; width:25px">
+    <div class="col-12 col-lg-4 col-md-6 col-sm-12 mx-auto mb-5">
+        <div class="card rounded-0 mb-3">
+            <div class="card-body rounded-0">
+                <div class="container-fluid">
+                    <dl>
+                        <dt class="text-body">First Name:</dt>
+                        <dd class="ps-4"><?= $session->get('login_firstname') ?></dd>
+                        <dt class="text-body">Middle Name:</dt>
+                        <dd class="ps-4"><?= !empty($session->get('login_middlename')) ? $session->get('login_middlename') : "N/A" ?></dd>
+                        <dt class="text-body">Last Name:</dt>
+                        <dd class="ps-4"><?= $session->get('login_lastname') ?></dd>
+                        <dt class="text-body">Email:</dt>
+                        <dd class="ps-4"><?= $session->get('login_email') ?></dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-xs-12 col-12 mx-auto">
+            <a href="<?= base_url('logout') ?>" class="btn btn-dark bg-gradient rounded-pill w-100">Logout</a>
+        </div>
+    </div>
+
+</div>
+<?= $this->endSection() ?>
+</html5>
+</p>
+
+<h3><b>Managing the Routes</b></h3>
+
+<p>Lastly, let's manage the routes of the pages so we can test and check the result of this <b>Login and Registration</b> project using the <b>CodeIgniter 4 Framework</b>. Open the <b class="text-danger">App&gt;Config&gt;Routes.php</b>. Then follow the script below.</p>
+
+<p>
+<php>
+    <?php
+
+    namespace Config;
+    
+    // Create a new instance of our RouteCollection class.
+    $routes = Services::routes();
+    
+    // Load the system's routing file first, so that the app and ENVIRONMENT
+    // can override as needed.
+    if (is_file(SYSTEMPATH . 'Config/Routes.php')) {
+        require SYSTEMPATH . 'Config/Routes.php';
+    }
+    
+    /*
+     * --------------------------------------------------------------------
+     * Router Setup
+     * --------------------------------------------------------------------
+     */
+    $routes->setDefaultNamespace('App\Controllers');
+    $routes->setDefaultController('LoginController');
+    $routes->setDefaultMethod('index');
+    $routes->setTranslateURIDashes(false);
+    $routes->set404Override();
+    // The Auto Routing (Legacy) is very dangerous. It is easy to create vulnerable apps
+    // where controller filters or CSRF protection are bypassed.
+    // If you don't want to define all routes, please use the Auto Routing (Improved).
+    // Set `$autoRoutesImproved` to true in `app/Config/Feature.php` and set the following to true.
+    //$routes->setAutoRoute(false);
+    
+    /*
+     * --------------------------------------------------------------------
+     * Route Definitions
+     * --------------------------------------------------------------------
+     */
+    
+    // We get a performance increase by specifying the default
+    // route since we don't have to scan directories.
+    $routes->get('/', 'LoginController::index',['filter' => 'authenticated']);
+    $routes->get('/registration', 'LoginController::registration',['filter' => 'authenticated']);
+    $routes->get('LoginController', 'LoginController::index',['filter' => 'authenticated']);
+    $routes->get('LoginController/(:segment)', 'LoginController::$1',['filter' => 'authenticated']);
+    $routes->match(['post'], '/registration', 'LoginController::registration',['filter' => 'authenticated']);
+    $routes->match(['post'], '/login', 'LoginController::index',['filter' => 'authenticated']);
+    $routes->get('/logout', 'LoginController::logout');
+    
+    $routes->group('Main', ['filter'=>'authenticate'], static function($routes){
+        $routes->get('', 'Main::index');
+        $routes->get('(:segment)', 'Main::$1');
+        $routes->get('(:segment)/(:any)', 'Main::$1/$2');
+        $routes->match(['post'], 'user_edit/(:num)', 'Main::user_edit/$1');
+    });
+    
+    
+    
+    /*
+     * --------------------------------------------------------------------
+     * Additional Routing
+     * --------------------------------------------------------------------
+     *
+     * There will often be times that you need additional routing and you
+     * need it to be able to override any defaults in this file. Environment
+     * based routes is one such time. require() additional route files here
+     * to make that happen.
+     *
+     * You will have access to the $routes object within that file without
+     * needing to reload it.
+     */
+    if (is_file(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
+        require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
+    }    
+</php>
+</p>
+
+<p>There you go! You can now test the application on your browser by browsing <b class="text-danger">http://localhost/ci4-login-registration</b>. The application will be redirected to the login page by default. Users cannot access the main page if he/she is not registered and logged in to the application yet.</p>
+
+<h3><b>Snapshots</b></h3>
+
+<p>Here are the snapshots of the resulting interface of pages of the provided sample CI4 Project.</p>
+
+<h4><b>Login Page</b></h4>
+
+<p class="text-center"><a href="https://www.sourcecodester.com/sites/default/files/CI4-Login-Registration.jpg" target="_blank"><img alt="Login and Registration using CI4" class="img-fluid rounded-0" src="https://www.sourcecodester.com/sites/default/files/CI4-Login-Registration.jpg" /> </a></p>
+
+<h4><b>Registration Page</b></h4>
+
+<p class="text-center"><a href="https://www.sourcecodester.com/sites/default/files/CI4-Login-Registration-register-page.jpg" target="_blank"><img alt="Login and Registration using CI4" class="img-fluid rounded-0" src="https://www.sourcecodester.com/sites/default/files/CI4-Login-Registration-register-page.jpg" /> </a></p>
+
+<h4><b>Home Page</b></h4>
+
+<p class="text-center"><a href="https://www.sourcecodester.com/sites/default/files/CI4-Login-Registration-home.jpg" target="_blank"><img alt="Login and Registration using CI4" class="img-fluid rounded-0" src="https://www.sourcecodester.com/sites/default/files/CI4-Login-Registration-home.jpg" /> </a></p>
+
+<p>I have also provided the complete source code of this <b>Login and Registration using the CI4</b> project on this site and it is free to download. The download button is located below this tutorial's content. Free free to download and modify it.</p>
+
+<p>I hope this <b>Creating a Login and Registration Form using CodeIgniter 4 Tutorial</b> will help you with what you are looking for and will be useful for your current and future <b>CodeIgniter</b> projects.</p>
+
+<p>Explore more on this website for more <b>Tutorials</b> and <b>Free Source Codes</b>.</p>
+
+<p>Happy Coding =)</p>
