@@ -1,10 +1,6 @@
 <?= $this->include('layouts/main_header') ?>
 <?= $this->include('layouts/main_sidebar') ?>
 
-
-
-          
-
                 <div class="content">
 
                     <!-- Start Content-->
@@ -34,7 +30,7 @@
                                     <div class="card-body">
                                         <i class="fa fa-info-circle text-muted float-end" data-bs-container="#tooltip-container" data-bs-toggle="tooltip" data-bs-placement="bottom" title="More Info"></i>
                                         <h4 class="mt-0 font-16">Service Manual List</h4>
-                                        <h2 class="text-primary my-3 text-center"><i style="color:#059212; font-weight: bolder; font-size: 20px" class="icon-docs"></i>&nbsp;<span data-plugin="counterup">31,570</span></h2>
+                                        <h2 class="text-primary my-3 text-center"><i style="color:#059212; font-weight: bolder; font-size: 20px" class="icon-docs"></i>&nbsp;<span data-plugin="counterup"><?php echo $manual_count; ?></span></h2>
                                         <p class="text-muted mb-0">For the month of <b><?php  echo date('F Y'); ?></b>.</p>
                                     </div>
                                 </div>
@@ -66,7 +62,7 @@
                                     <div class="card-body">
                                         <i class="fa fa-info-circle text-muted float-end" data-bs-container="#tooltip-container" data-bs-toggle="tooltip" data-bs-placement="bottom" title="More Info"></i>
                                         <h4 class="mt-0 font-16">Service Bulletins</h4>
-                                        <h2 class="text-primary my-3 text-center"><i style="color:#059212; font-weight: bolder; font-size: 20px" class="icon-docs"></i>&nbsp;<span data-plugin="counterup">370</span></h2>
+                                        <h2 class="text-primary my-3 text-center"><i style="color:#059212; font-weight: bolder; font-size: 20px" class="icon-docs"></i>&nbsp;<span data-plugin="counterup"><?php echo $bulletin_count; ?></span></h2>
                                         <p class="text-muted mb-0">For the month of <b><?php  echo date('F Y'); ?></b>.</p>
                                     </div>
                                 </div>
@@ -94,14 +90,5 @@
 
 
                            
-
-
-                      
-                          
-                           
-
-                       
-
-
 
  <?= $this->include('layouts/main_footer') ?>

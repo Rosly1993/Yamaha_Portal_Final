@@ -16,7 +16,7 @@ $(document).ready(function () {
             }
         },
         "columns": [
-            { data: 'id', className: 'table-cell text-center font-size-14' },
+            { data: 'IndexKey', className: 'table-cell text-center font-size-14' },
             { data: 'firstname', className: 'table-cell text-center font-size-14' },
             { data: 'middlename', className: 'table-cell text-center font-size-14' },
             { data: 'lastname', className: 'table-cell text-center font-size-14' },
@@ -140,11 +140,11 @@ $(document).ready(function () {
 
   $('#items_table tbody').on('click', '.edit-btn', function () {
       var data = table.row($(this).parents('tr')).data();
-      var id = data.id;
+      var id = data.IndexKey;
 
       // Store original data
       originalData = {
-          id: data.id,
+          id: data.IndexKey,
           firstname: data.firstname,
           middlename: data.middlename,
           lastname: data.lastname,
@@ -166,7 +166,7 @@ $(document).ready(function () {
                   $('#editModal #lastname').val(response.data.lastname);
                   $('#editModal #username').val(response.data.username);
                   $('#editModal #email').val(response.data.email);
-                  $('#editModal #user-id').val(response.data.id);
+                  $('#editModal #user-id').val(response.data.IndexKey);
                   $('#editModal').modal('show');
               } else {
                   Swal.fire({
@@ -271,7 +271,7 @@ $(document).ready(function () {
   // Activate button click
   $('#items_table tbody').on('click', '.activate-btn', function () {
       var data = table.row($(this).parents('tr')).data();
-      var id = data.id;
+      var id = data.IndexKey;
 
       Swal.fire({
           title: 'Are you sure?',
@@ -312,7 +312,7 @@ $(document).ready(function () {
   // Deactivate button click
   $('#items_table tbody').on('click', '.deactivate-btn', function () {
     var data = table.row($(this).parents('tr')).data();
-    var id = data.id;
+    var id = data.IndexKey;
 
     Swal.fire({
         title: 'Are you sure?',

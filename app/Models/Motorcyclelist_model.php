@@ -7,9 +7,9 @@ use CodeIgniter\Model;
 class Motorcyclelist_model extends Model
 {
     protected $table = 'tbl_motorcyclelist';
-    protected $primaryKey = 'id';
+    protected $primaryKey = 'IndexKey';
     protected $allowedFields = [
-        'pet_name', 'model_code', 'model_name', 'model_type', 'category',
+        'pet_name', 'model_code', 'model_name',  'category_id',
         'is_active', 'created_by', 'created_at', 'updated_by', 'updated_at'
     ];
     
@@ -18,8 +18,9 @@ class Motorcyclelist_model extends Model
     {
         // Build the query
         $builder = $this->builder();
-        $builder->select('tbl_motorcyclelist.*, tbl_motorcycle_category.model_type as modeltype');
-        $builder->join('tbl_motorcycle_category', 'tbl_motorcyclelist.model_type = tbl_motorcycle_category.id', 'left');
+        // $builder->select('tbl_motorcyclelist.*');
+        $builder->select('tbl_motorcyclelist.IndexKey,tbl_motorcyclelist.is_active,tbl_motorcyclelist.pet_name,tbl_motorcyclelist.model_code,tbl_motorcyclelist.model_name,tbl_motorcyclelist.created_by,tbl_motorcyclelist.created_at,tbl_motorcyclelist.updated_by,tbl_motorcyclelist.updated_at, tbl_motorcycle_category.model_type, tbl_motorcycle_category.category');
+        $builder->join('tbl_motorcycle_category', 'tbl_motorcyclelist.category_id = tbl_motorcycle_category.IndexKey', 'left');
         $query = $builder->get();
 
         return $query->getResultArray();
@@ -32,13 +33,24 @@ class Motorcyclelist_model extends Model
         return $this->where($data)->first() !== null;
     }
 
+//to join the motorcycle category 
+
+    public function getMotorcycleById($id)
+{
+    return $this->select('tbl_motorcyclelist.model_name,tbl_motorcyclelist.IndexKey, tbl_motorcyclelist.pet_name, tbl_motorcyclelist.model_code, tbl_motorcycle_category.model_type, tbl_motorcycle_category.category')
+                ->join('tbl_motorcycle_category', 'tbl_motorcyclelist.category_id = tbl_motorcycle_category.IndexKey', 'left')
+                ->where('tbl_motorcyclelist.IndexKey', $id)
+                ->get()
+                ->getRowArray();
+}
+
     public function update_recordExists($data, $id = null)
     {
         $builder = $this->db->table($this->table);
         $builder->where($data);
     
         if ($id !== null) {
-            $builder->where('id !=', $id);
+            $builder->where('IndexKey !=', $id);
         }
     
         $result = $builder->get()->getRow();

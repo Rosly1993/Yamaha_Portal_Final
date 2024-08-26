@@ -25,7 +25,7 @@ class Auth implements FilterInterface
      */
     public function before(RequestInterface $request, $arguments = null)
     {
-        if(empty(session()->login_id)){
+        if(empty(session()->login_IndexKey)){
             return redirect()->to('/');
         }
     }

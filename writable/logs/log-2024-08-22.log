@@ -1,0 +1,209 @@
+ERROR - 2024-08-22 20:46:08 --> Unknown column 'tbl_motorcyclelist.model_name' in 'field list'
+CRITICAL - 2024-08-22 20:46:08 --> Unknown column 'tbl_motorcyclelist.model_name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `tbl_motorcyclelist`.`model_name`, `tbl_motorcyclelist`.`IndexKey`, `tbl_motorcyclelist`.`pet_name`, `tbl_motorcyclelist`.`model_code`, `tbl_motorcycle_category`.`model_type`, `tbl_motorcycle_category`.`category`
+FROM `tbl_3sbranch_list`
+LEFT JOIN `tbl_motorcycle_category` ON `tbl_motorcyclelist`.`category_id` = `tbl_motorcycle_category`.`IndexKey`
+WHERE `tbl_motorcyclelist`.`IndexKey` = \'00001\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tbl_motorcyclelist`.`model_name`, `tbl_motorcyclelist`.`IndexKey`, `tbl_motorcyclelist`.`pet_name`, `tbl_motorcyclelist`.`model_code`, `tbl_motorcycle_category`.`model_type`, `tbl_motorcycle_category`.`category`
+FROM `tbl_3sbranch_list`
+LEFT JOIN `tbl_motorcycle_category` ON `tbl_motorcyclelist`.`category_id` = `tbl_motorcycle_category`.`IndexKey`
+WHERE `tbl_motorcyclelist`.`IndexKey` = \'00001\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tbl_motorcyclelist`.`model_name`, `tbl_motorcyclelist`.`IndexKey`, `tbl_motorcyclelist`.`pet_name`, `tbl_motorcyclelist`.`model_code`, `tbl_motorcycle_category`.`model_type`, `tbl_motorcycle_category`.`category`
+FROM `tbl_3sbranch_list`
+LEFT JOIN `tbl_motorcycle_category` ON `tbl_motorcyclelist`.`category_id` = `tbl_motorcycle_category`.`IndexKey`
+WHERE `tbl_motorcyclelist`.`IndexKey` = \'00001\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `tbl_motorcyclelist`.`model_name`, `tbl_motorcyclelist`.`IndexKey`, `tbl_motorcyclelist`.`pet_name`, `tbl_motorcyclelist`.`model_code`, `tbl_motorcycle_category`.`model_type`, `tbl_motorcycle_category`.`category`
+FROM `tbl_3sbranch_list`
+LEFT JOIN `tbl_motorcycle_category` ON `tbl_motorcyclelist`.`category_id` = `tbl_motorcycle_category`.`IndexKey`
+WHERE `tbl_motorcyclelist`.`IndexKey` = :tbl_motorcyclelist.IndexKey:', [...], false)
+ 5 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Models\Branchlist_model.php(42): CodeIgniter\Model->__call('get', [])
+ 7 APPPATH\Controllers\Branchlist.php(122): App\Models\Branchlist_model->getMotorcycleById('00001')
+ 8 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Branchlist->edit('00001')
+ 9 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Branchlist))
+10 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-08-22 20:46:09 --> Unknown column 'tbl_motorcyclelist.model_name' in 'field list'
+CRITICAL - 2024-08-22 20:46:09 --> Unknown column 'tbl_motorcyclelist.model_name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `tbl_motorcyclelist`.`model_name`, `tbl_motorcyclelist`.`IndexKey`, `tbl_motorcyclelist`.`pet_name`, `tbl_motorcyclelist`.`model_code`, `tbl_motorcycle_category`.`model_type`, `tbl_motorcycle_category`.`category`
+FROM `tbl_3sbranch_list`
+LEFT JOIN `tbl_motorcycle_category` ON `tbl_motorcyclelist`.`category_id` = `tbl_motorcycle_category`.`IndexKey`
+WHERE `tbl_motorcyclelist`.`IndexKey` = \'00001\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tbl_motorcyclelist`.`model_name`, `tbl_motorcyclelist`.`IndexKey`, `tbl_motorcyclelist`.`pet_name`, `tbl_motorcyclelist`.`model_code`, `tbl_motorcycle_category`.`model_type`, `tbl_motorcycle_category`.`category`
+FROM `tbl_3sbranch_list`
+LEFT JOIN `tbl_motorcycle_category` ON `tbl_motorcyclelist`.`category_id` = `tbl_motorcycle_category`.`IndexKey`
+WHERE `tbl_motorcyclelist`.`IndexKey` = \'00001\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tbl_motorcyclelist`.`model_name`, `tbl_motorcyclelist`.`IndexKey`, `tbl_motorcyclelist`.`pet_name`, `tbl_motorcyclelist`.`model_code`, `tbl_motorcycle_category`.`model_type`, `tbl_motorcycle_category`.`category`
+FROM `tbl_3sbranch_list`
+LEFT JOIN `tbl_motorcycle_category` ON `tbl_motorcyclelist`.`category_id` = `tbl_motorcycle_category`.`IndexKey`
+WHERE `tbl_motorcyclelist`.`IndexKey` = \'00001\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `tbl_motorcyclelist`.`model_name`, `tbl_motorcyclelist`.`IndexKey`, `tbl_motorcyclelist`.`pet_name`, `tbl_motorcyclelist`.`model_code`, `tbl_motorcycle_category`.`model_type`, `tbl_motorcycle_category`.`category`
+FROM `tbl_3sbranch_list`
+LEFT JOIN `tbl_motorcycle_category` ON `tbl_motorcyclelist`.`category_id` = `tbl_motorcycle_category`.`IndexKey`
+WHERE `tbl_motorcyclelist`.`IndexKey` = :tbl_motorcyclelist.IndexKey:', [...], false)
+ 5 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Models\Branchlist_model.php(42): CodeIgniter\Model->__call('get', [])
+ 7 APPPATH\Controllers\Branchlist.php(122): App\Models\Branchlist_model->getMotorcycleById('00001')
+ 8 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Branchlist->edit('00001')
+ 9 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Branchlist))
+10 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-22 20:49:38 --> Invalid file: modals/edit_branclist.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('modals/edit_branclist.php')
+ 2 SYSTEMPATH\View\View.php(429): CodeIgniter\View\View->render('modals/edit_branclist', null, true)
+ 3 APPPATH\Views\pages\branchlist.php(82): CodeIgniter\View\View->include('modals/edit_branclist')
+ 4 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\branchlist.php')
+ 5 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/branchlist', [], true)
+ 7 APPPATH\Controllers\Branchlist.php(25): view('pages/branchlist', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Branchlist->index()
+ 9 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Branchlist))
+10 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-08-22 20:49:57 --> Unknown column 'tbl_motorcyclelist.model_name' in 'field list'
+CRITICAL - 2024-08-22 20:49:57 --> Unknown column 'tbl_motorcyclelist.model_name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `tbl_motorcyclelist`.`model_name`, `tbl_motorcyclelist`.`IndexKey`, `tbl_motorcyclelist`.`pet_name`, `tbl_motorcyclelist`.`model_code`, `tbl_motorcycle_category`.`model_type`, `tbl_motorcycle_category`.`category`
+FROM `tbl_3sbranch_list`
+LEFT JOIN `tbl_motorcycle_category` ON `tbl_motorcyclelist`.`category_id` = `tbl_motorcycle_category`.`IndexKey`
+WHERE `tbl_motorcyclelist`.`IndexKey` = \'00001\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tbl_motorcyclelist`.`model_name`, `tbl_motorcyclelist`.`IndexKey`, `tbl_motorcyclelist`.`pet_name`, `tbl_motorcyclelist`.`model_code`, `tbl_motorcycle_category`.`model_type`, `tbl_motorcycle_category`.`category`
+FROM `tbl_3sbranch_list`
+LEFT JOIN `tbl_motorcycle_category` ON `tbl_motorcyclelist`.`category_id` = `tbl_motorcycle_category`.`IndexKey`
+WHERE `tbl_motorcyclelist`.`IndexKey` = \'00001\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tbl_motorcyclelist`.`model_name`, `tbl_motorcyclelist`.`IndexKey`, `tbl_motorcyclelist`.`pet_name`, `tbl_motorcyclelist`.`model_code`, `tbl_motorcycle_category`.`model_type`, `tbl_motorcycle_category`.`category`
+FROM `tbl_3sbranch_list`
+LEFT JOIN `tbl_motorcycle_category` ON `tbl_motorcyclelist`.`category_id` = `tbl_motorcycle_category`.`IndexKey`
+WHERE `tbl_motorcyclelist`.`IndexKey` = \'00001\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `tbl_motorcyclelist`.`model_name`, `tbl_motorcyclelist`.`IndexKey`, `tbl_motorcyclelist`.`pet_name`, `tbl_motorcyclelist`.`model_code`, `tbl_motorcycle_category`.`model_type`, `tbl_motorcycle_category`.`category`
+FROM `tbl_3sbranch_list`
+LEFT JOIN `tbl_motorcycle_category` ON `tbl_motorcyclelist`.`category_id` = `tbl_motorcycle_category`.`IndexKey`
+WHERE `tbl_motorcyclelist`.`IndexKey` = :tbl_motorcyclelist.IndexKey:', [...], false)
+ 5 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Models\Branchlist_model.php(42): CodeIgniter\Model->__call('get', [])
+ 7 APPPATH\Controllers\Branchlist.php(122): App\Models\Branchlist_model->getMotorcycleById('00001')
+ 8 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Branchlist->edit('00001')
+ 9 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Branchlist))
+10 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-08-22 20:50:09 --> Unknown column 'tbl_motorcyclelist.model_name' in 'field list'
+CRITICAL - 2024-08-22 20:50:09 --> Unknown column 'tbl_motorcyclelist.model_name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `tbl_motorcyclelist`.`model_name`, `tbl_motorcyclelist`.`IndexKey`, `tbl_motorcyclelist`.`pet_name`, `tbl_motorcyclelist`.`model_code`, `tbl_motorcycle_category`.`model_type`, `tbl_motorcycle_category`.`category`
+FROM `tbl_3sbranch_list`
+LEFT JOIN `tbl_motorcycle_category` ON `tbl_motorcyclelist`.`category_id` = `tbl_motorcycle_category`.`IndexKey`
+WHERE `tbl_motorcyclelist`.`IndexKey` = \'00001\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tbl_motorcyclelist`.`model_name`, `tbl_motorcyclelist`.`IndexKey`, `tbl_motorcyclelist`.`pet_name`, `tbl_motorcyclelist`.`model_code`, `tbl_motorcycle_category`.`model_type`, `tbl_motorcycle_category`.`category`
+FROM `tbl_3sbranch_list`
+LEFT JOIN `tbl_motorcycle_category` ON `tbl_motorcyclelist`.`category_id` = `tbl_motorcycle_category`.`IndexKey`
+WHERE `tbl_motorcyclelist`.`IndexKey` = \'00001\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tbl_motorcyclelist`.`model_name`, `tbl_motorcyclelist`.`IndexKey`, `tbl_motorcyclelist`.`pet_name`, `tbl_motorcyclelist`.`model_code`, `tbl_motorcycle_category`.`model_type`, `tbl_motorcycle_category`.`category`
+FROM `tbl_3sbranch_list`
+LEFT JOIN `tbl_motorcycle_category` ON `tbl_motorcyclelist`.`category_id` = `tbl_motorcycle_category`.`IndexKey`
+WHERE `tbl_motorcyclelist`.`IndexKey` = \'00001\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `tbl_motorcyclelist`.`model_name`, `tbl_motorcyclelist`.`IndexKey`, `tbl_motorcyclelist`.`pet_name`, `tbl_motorcyclelist`.`model_code`, `tbl_motorcycle_category`.`model_type`, `tbl_motorcycle_category`.`category`
+FROM `tbl_3sbranch_list`
+LEFT JOIN `tbl_motorcycle_category` ON `tbl_motorcyclelist`.`category_id` = `tbl_motorcycle_category`.`IndexKey`
+WHERE `tbl_motorcyclelist`.`IndexKey` = :tbl_motorcyclelist.IndexKey:', [...], false)
+ 5 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Models\Branchlist_model.php(42): CodeIgniter\Model->__call('get', [])
+ 7 APPPATH\Controllers\Branchlist.php(122): App\Models\Branchlist_model->getMotorcycleById('00001')
+ 8 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Branchlist->edit('00001')
+ 9 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Branchlist))
+10 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-08-22 20:50:17 --> Unknown column 'tbl_motorcyclelist.model_name' in 'field list'
+CRITICAL - 2024-08-22 20:50:17 --> Unknown column 'tbl_motorcyclelist.model_name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `tbl_motorcyclelist`.`model_name`, `tbl_motorcyclelist`.`IndexKey`, `tbl_motorcyclelist`.`pet_name`, `tbl_motorcyclelist`.`model_code`, `tbl_motorcycle_category`.`model_type`, `tbl_motorcycle_category`.`category`
+FROM `tbl_3sbranch_list`
+LEFT JOIN `tbl_motorcycle_category` ON `tbl_motorcyclelist`.`category_id` = `tbl_motorcycle_category`.`IndexKey`
+WHERE `tbl_motorcyclelist`.`IndexKey` = \'00001\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tbl_motorcyclelist`.`model_name`, `tbl_motorcyclelist`.`IndexKey`, `tbl_motorcyclelist`.`pet_name`, `tbl_motorcyclelist`.`model_code`, `tbl_motorcycle_category`.`model_type`, `tbl_motorcycle_category`.`category`
+FROM `tbl_3sbranch_list`
+LEFT JOIN `tbl_motorcycle_category` ON `tbl_motorcyclelist`.`category_id` = `tbl_motorcycle_category`.`IndexKey`
+WHERE `tbl_motorcyclelist`.`IndexKey` = \'00001\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tbl_motorcyclelist`.`model_name`, `tbl_motorcyclelist`.`IndexKey`, `tbl_motorcyclelist`.`pet_name`, `tbl_motorcyclelist`.`model_code`, `tbl_motorcycle_category`.`model_type`, `tbl_motorcycle_category`.`category`
+FROM `tbl_3sbranch_list`
+LEFT JOIN `tbl_motorcycle_category` ON `tbl_motorcyclelist`.`category_id` = `tbl_motorcycle_category`.`IndexKey`
+WHERE `tbl_motorcyclelist`.`IndexKey` = \'00001\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `tbl_motorcyclelist`.`model_name`, `tbl_motorcyclelist`.`IndexKey`, `tbl_motorcyclelist`.`pet_name`, `tbl_motorcyclelist`.`model_code`, `tbl_motorcycle_category`.`model_type`, `tbl_motorcycle_category`.`category`
+FROM `tbl_3sbranch_list`
+LEFT JOIN `tbl_motorcycle_category` ON `tbl_motorcyclelist`.`category_id` = `tbl_motorcycle_category`.`IndexKey`
+WHERE `tbl_motorcyclelist`.`IndexKey` = :tbl_motorcyclelist.IndexKey:', [...], false)
+ 5 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Models\Branchlist_model.php(42): CodeIgniter\Model->__call('get', [])
+ 7 APPPATH\Controllers\Branchlist.php(122): App\Models\Branchlist_model->getMotorcycleById('00001')
+ 8 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Branchlist->edit('00001')
+ 9 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Branchlist))
+10 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-22 21:05:09 --> Call to undefined method App\Models\Branchlist_model::getMotorcycleById
+in SYSTEMPATH\Model.php on line 773.
+ 1 APPPATH\Controllers\Branchlist.php(122): CodeIgniter\Model->__call('getMotorcycleById', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Branchlist->edit('00001')
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Branchlist))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-22 21:05:11 --> Call to undefined method App\Models\Branchlist_model::getMotorcycleById
+in SYSTEMPATH\Model.php on line 773.
+ 1 APPPATH\Controllers\Branchlist.php(122): CodeIgniter\Model->__call('getMotorcycleById', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Branchlist->edit('00001')
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Branchlist))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-22 21:09:39 --> Call to undefined method App\Models\Branchlist_model::getMotorcycleById
+in SYSTEMPATH\Model.php on line 773.
+ 1 APPPATH\Controllers\Branchlist.php(122): CodeIgniter\Model->__call('getMotorcycleById', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Branchlist->edit('00001')
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Branchlist))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-22 21:09:39 --> Call to undefined method App\Models\Branchlist_model::getMotorcycleById
+in SYSTEMPATH\Model.php on line 773.
+ 1 APPPATH\Controllers\Branchlist.php(122): CodeIgniter\Model->__call('getMotorcycleById', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Branchlist->edit('00001')
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Branchlist))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-22 21:09:43 --> Call to undefined method App\Models\Branchlist_model::getMotorcycleById
+in SYSTEMPATH\Model.php on line 773.
+ 1 APPPATH\Controllers\Branchlist.php(122): CodeIgniter\Model->__call('getMotorcycleById', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Branchlist->edit('00001')
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Branchlist))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-22 21:10:15 --> Call to undefined method App\Models\Branchlist_model::getMotorcycleById
+in SYSTEMPATH\Model.php on line 773.
+ 1 APPPATH\Controllers\Branchlist.php(122): CodeIgniter\Model->__call('getMotorcycleById', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Branchlist->edit('00001')
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Branchlist))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-22 21:10:16 --> Call to undefined method App\Models\Branchlist_model::getMotorcycleById
+in SYSTEMPATH\Model.php on line 773.
+ 1 APPPATH\Controllers\Branchlist.php(122): CodeIgniter\Model->__call('getMotorcycleById', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Branchlist->edit('00001')
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Branchlist))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-22 21:10:16 --> Call to undefined method App\Models\Branchlist_model::getMotorcycleById
+in SYSTEMPATH\Model.php on line 773.
+ 1 APPPATH\Controllers\Branchlist.php(122): CodeIgniter\Model->__call('getMotorcycleById', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Branchlist->edit('00001')
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Branchlist))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-22 22:29:14 --> unlink(C:\xampp\htdocs\Yamaha_Portal\writable\debugbar/debugbar_1724336707.628588.json): No such file or directory
+in SYSTEMPATH\Debug\Toolbar\Collectors\History.php on line 76.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(C:\\xampp\\htdocs\\Yamaha_Portal\\writable\\debugbar/debugbar_1724336707.628588.json): No such file or directory', 'SYSTEMPATH\\Debug\\Toolbar\\Collectors\\History.php', 76)
+ 2 SYSTEMPATH\Debug\Toolbar\Collectors\History.php(76): unlink('FCPATH\\writable\\debugbar/debugbar_1724336707.628588.json')
+ 3 SYSTEMPATH\Debug\Toolbar.php(493): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles('1724336944.305479', 20)
+ 4 SYSTEMPATH\Debug\Toolbar.php(472): CodeIgniter\Debug\Toolbar->format([...], 'html')
+ 5 APPPATH\Config\Events.php(46): CodeIgniter\Debug\Toolbar->respond()
+ 6 SYSTEMPATH\Events\Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+ 7 SYSTEMPATH\CodeIgniter.php(326): CodeIgniter\Events\Events::trigger('pre_system')
+ 8 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()

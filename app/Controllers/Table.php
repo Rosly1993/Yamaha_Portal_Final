@@ -23,6 +23,21 @@ class Table extends BaseController
         $this->data['page_title'] = "Table";
         return view('pages/user_table', $this->data);
     }
+    // for Audit Trail
+    private function logActivity($username, $activity, $data)
+    {
+        $logModel = new \App\Models\LogModel();
+        $details = json_encode($data); // Convert data array to JSON string
+    
+        $logData = [
+            'username' => $username,
+            'activity' => $activity,
+            'details' => $details,
+            'date_record' => date('Y-m-d H:i:s'),
+        ];
+    
+        $logModel->insert($logData);
+    }
 
     public function add()
     {
@@ -76,9 +91,9 @@ class Table extends BaseController
                 'firstname' => 'required',
                 'middlename' => 'required',
                 'lastname'  => 'required',
-                'username'  => 'required|is_unique[users.username,id,{id}]',
+                'username'  => 'required|is_unique[users.username,IndexKey,{id}]',
                 'password'  => 'permit_empty|min_length[8]|regex_match[/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/]',
-                'email'     => 'required|valid_email|is_unique[users.email,id,{id}]',
+                'email'     => 'required|valid_email|is_unique[users.email,IndexKey,{id}]',
             ]);
 
             if (!$validation->withRequest($this->request)->run()) {
@@ -113,36 +128,43 @@ class Table extends BaseController
   
     public function activate($id)
     {
-    if ($this->request->isAJAX()) {
-        $model = new Auth(); // Ensure this is the correct model
-        
-        try {
-            // Update the 'is_active' field to 0 instead of deleting the record
-            $result = $model->update($id, ['is_active' => 1]);
-
-            if ($result) {
-                return $this->response->setJSON(['success' => true]);
-            } else {
-                return $this->response->setJSON(['success' => false, 'message' => 'Update failed']);
+        if ($this->request->isAJAX()) {
+            $model = new Auth(); // Ensure this is the correct model
+    
+            try {
+                // Update the 'is_active' field to 0 instead of deleting the record
+                $result = $model->update($id, ['is_active' => 1]);
+    
+                if ($result) {
+                    $session = session();
+                    $this->logActivity($session->get('login_username'), 'Activate User', "User with ID $id has been Activated.");
+    
+                    return $this->response->setJSON(['success' => true]);
+                } else {
+                    return $this->response->setJSON(['success' => false, 'message' => 'Update failed']);
+                }
+            } catch (\Exception $e) {
+                return $this->response->setJSON(['success' => false, 'message' => $e->getMessage()]);
             }
-        } catch (\Exception $e) {
-            return $this->response->setJSON(['success' => false, 'message' => $e->getMessage()]);
         }
+    
+        return redirect()->back();
     }
-
-    return redirect()->back();
-}
+    
 
 public function deactivate($id)
 {
     if ($this->request->isAJAX()) {
         $model = new Auth(); // Ensure this is the correct model
-        
+
         try {
             // Update the 'is_active' field to 0 instead of deleting the record
             $result = $model->update($id, ['is_active' => 0]);
 
             if ($result) {
+                $session = session();
+                $this->logActivity($session->get('login_username'), 'Deactivate User', "User with ID $id has been deactivated.");
+
                 return $this->response->setJSON(['success' => true]);
             } else {
                 return $this->response->setJSON(['success' => false, 'message' => 'Update failed']);

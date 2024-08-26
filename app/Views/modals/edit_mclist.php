@@ -13,26 +13,30 @@
             <div class="mb-3 col-6 col-md-6 col-sm-6">
               <label for="pet_name" class="form-label">Pet Name</label>
               <input type="text" name="pet_name" id="pet_name" class="form-control">
+              <div class="invalid-feedback">This field is required.</div>
             </div>
             <div class="mb-3 col-6 col-md-6 col-sm-6">
               <label for="model_code" class="form-label">Model Code</label>
               <input type="text" name="model_code" id="model_code" class="form-control">
+              <div class="invalid-feedback">This field is required.</div>
             </div>
             <div class="mb-3 col-6 col-md-6 col-sm-6">
               <label for="model_name" class="form-label">Model Name</label>
               <input type="text" name="model_name" id="model_name" class="form-control">
+              <div class="invalid-feedback">This field is required.</div>
             </div>
             <div class="mb-3 col-6 col-md-6 col-sm-6">
             <label for="category" class="form-label">Category</label><span style="color:red">*</span>
             <select type="select" name="category" id="category" class="form-select" placeholder="Enter Category ...." autocomplete="off">
             </select>
-      
+            <div class="invalid-feedback">This field is required.</div>
         </div>
   
     <div class="mb-3 col-12 col-md-12 col-sm-12">
         <label for="model_type" class="form-label">Model Type</label><span style="color:red">*</span>
         <select type="select" name="model_type" id="model_type" class="form-select" placeholder="Enter Category ...." autocomplete="off">
-        </select>
+      </select>
+      <div class="invalid-feedback">This field is required.</div>
     </div>
           </div>
         </div>

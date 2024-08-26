@@ -1,0 +1,42 @@
+CRITICAL - 2024-08-26 12:20:04 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Activitylogs.php on line 49.
+ 1 APPPATH\Controllers\Activitylogs.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\Activitylogs.php', 49)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Activitylogs->getData()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Activitylogs))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-26 12:20:08 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Activitylogs.php on line 49.
+ 1 APPPATH\Controllers\Activitylogs.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\Activitylogs.php', 49)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Activitylogs->getData()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Activitylogs))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-26 12:20:55 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Activitylogs.php on line 49.
+ 1 APPPATH\Controllers\Activitylogs.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\Activitylogs.php', 49)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Activitylogs->getData()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Activitylogs))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-26 12:21:05 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Activitylogs.php on line 49.
+ 1 APPPATH\Controllers\Activitylogs.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\Activitylogs.php', 49)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Activitylogs->getData()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Activitylogs))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-26 12:21:32 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Activitylogs.php on line 49.
+ 1 APPPATH\Controllers\Activitylogs.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\Activitylogs.php', 49)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Activitylogs->getData()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Activitylogs))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-26 12:21:45 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Activitylogs.php on line 49.
+ 1 APPPATH\Controllers\Activitylogs.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\Activitylogs.php', 49)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Activitylogs->getData()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Activitylogs))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()

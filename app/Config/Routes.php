@@ -76,6 +76,71 @@ $routes->group('Motorcyclecategory', ['filter' => 'authenticate'], static functi
 });
 
 
+$routes->group('Location', ['filter' => 'authenticate'], static function($routes) {
+    $routes->get('', 'Location::index');  // Calls Location::index
+    $routes->get('view/(:segment)', 'Location::view/$1');  // Calls Location::view($1)
+    $routes->get('edit/(:segment)', 'Location::edit/$1');  // Calls Location::edit($1)
+    $routes->get('activate/(:segment)', 'Location::activate/$1');  // Calls Location::delete($1)
+    $routes->get('deactivate/(:segment)', 'Location::deactivate/$1');  // Calls Location::delete($1)
+    $routes->post('add', 'Location::add');  // Calls Location::add
+    $routes->post('update/(:segment)', 'Location::update/$1'); // Calls Location::update($1)
+    $routes->get('getData', 'Location::getData');  // Calls Motorcyclelist::getUsers
+    $routes->get('getAreas', 'Location::getAreas');
+    $routes->get('getRegion', 'Location::getRegion');
+    $routes->get('getClusterProvince', 'Location::getClusterProvince');
+
+});
+
+$routes->group('Branchlist', ['filter' => 'authenticate'], static function($routes) {
+    $routes->get('', 'Branchlist::index');  // Calls Branchlist::index
+    $routes->get('view/(:segment)', 'Branchlist::view/$1');  // Calls Branchlist::view($1)
+    $routes->get('edit/(:segment)', 'Branchlist::edit/$1');  // Calls Branchlist::edit($1)
+    $routes->get('activate/(:segment)', 'Branchlist::activate/$1');  // Calls Branchlist::delete($1)
+    $routes->get('deactivate/(:segment)', 'Branchlist::deactivate/$1');  // Calls Branchlist::delete($1)
+    $routes->post('add', 'Branchlist::add');  // Calls Branchlist::add
+    $routes->post('update/(:segment)', 'Branchlist::update/$1'); // Calls Branchlist::update($1)
+    $routes->get('getData', 'Branchlist::getData');  // Calls Motorcyclelist::getUsers
+    // $routes->get('getModelTypes', 'Branchlist::getModelTypes');
+});
+
+
+$routes->group('Servicebulletins', ['filter' => 'authenticate'], static function($routes) {
+    $routes->get('', 'Servicebulletins::index');  // Calls Servicebulletins::index
+    $routes->get('view/(:segment)', 'Servicebulletins::view/$1');  // Calls Servicebulletins::view($1)
+    $routes->get('edit/(:segment)', 'Servicebulletins::edit/$1');  // Calls Servicebulletins::edit($1)
+    $routes->get('activate/(:segment)', 'Servicebulletins::activate/$1');  // Calls Servicebulletins::delete($1)
+    $routes->get('deactivate/(:segment)', 'Servicebulletins::deactivate/$1');  // Calls Servicebulletins::delete($1)
+    $routes->post('add', 'Servicebulletins::add');  // Calls Servicebulletins::add
+    $routes->post('update/(:segment)', 'Servicebulletins::update/$1'); // Calls Servicebulletins::update($1)
+    $routes->get('getData', 'Servicebulletins::getData');  // Calls Motorcyclelist::getUsers
+    $routes->get('files/(:segment)', 'FileController::view/$1');
+    $routes->get('files/download/(:segment)', 'FileController::download/$1');
+
+});
+
+
+
+$routes->group('Servicemanuals', ['filter' => 'authenticate'], static function($routes) {
+    $routes->get('', 'Servicemanuals::index');  // Calls Servicemanuals::index
+    $routes->get('view/(:segment)', 'Servicemanuals::view/$1');  // Calls Servicemanuals::view($1)
+    $routes->get('edit/(:segment)', 'Servicemanuals::edit/$1');  // Calls Servicemanuals::edit($1)
+    $routes->get('activate/(:segment)', 'Servicemanuals::activate/$1');  // Calls Servicemanuals::delete($1)
+    $routes->get('deactivate/(:segment)', 'Servicemanuals::deactivate/$1');  // Calls Servicemanuals::delete($1)
+    $routes->post('add', 'Servicemanuals::add');  // Calls Servicemanuals::add
+    $routes->post('update/(:segment)', 'Servicemanuals::update/$1'); // Calls Servicemanuals::update($1)
+    $routes->get('getData', 'Servicemanuals::getData');  // Calls Motorcyclelist::getUsers
+    $routes->get('files/(:segment)', 'FileController::view/$1');
+    $routes->get('files/download/(:segment)', 'FileController::download/$1');
+    $routes->get('getModelnames', 'Servicemanuals::getModelnames');
+    $routes->get('getModelcodes', 'Servicemanuals::getModelcodes');
+
+});
+$routes->group('Activitylogs', ['filter' => 'authenticate'], static function($routes) {
+    $routes->get('', 'Activitylogs::index');  // Displays the index view
+    $routes->get('view/(:segment)', 'Activitylogs::view/$1');  // Shows the view method with segment
+    $routes->get('getData', 'Activitylogs::getData');  // Calls Motorcyclelist::getUsers
+});
+
 
 if (is_file(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
     require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';

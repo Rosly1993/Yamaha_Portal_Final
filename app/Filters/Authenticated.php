@@ -25,7 +25,10 @@ class Authenticated implements FilterInterface
      */
     public function before(RequestInterface $request, $arguments = null)
     {
-        if(!empty(session()->login_id)){
+        // if(!empty(session()->login_id)){
+        //     return redirect()->to('/Main');
+        // }
+        if(!empty(session()->login_IndexKey)){
             return redirect()->to('/Main');
         }
     }

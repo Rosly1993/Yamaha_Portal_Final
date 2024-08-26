@@ -31,7 +31,7 @@ class LoginController extends BaseController
                     $verify_password = password_verify($password, $user['password']);
                     if ($verify_password) {
                         // Update the last login date
-                        $this->loginModel->update($user['id'], ['last_login_date' => date('Y-m-d H:i:s')]);
+                        $this->loginModel->update($user['IndexKey'], ['last_login_date' => date('Y-m-d H:i:s')]);
     
                         // Log successful login
                         $this->logActivity($username, 'Login', 'Successful login.');

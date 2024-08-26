@@ -41,8 +41,9 @@ class Motorcyclelist extends BaseController
      }
  
 
-    public function add()
-    {
+
+public function add()
+{
     if ($this->request->isAJAX()) {
         $validation = \Config\Services::validation();
         $validation->setRules([
@@ -57,12 +58,34 @@ class Motorcyclelist extends BaseController
             return $this->response->setJSON(['success' => false, 'errors' => $validation->getErrors()]);
         }
 
+        // Get category and model_type values from the request
+        $category = strtoupper($this->request->getPost('category'));
+        $model_type = strtoupper($this->request->getPost('model_type'));
+
+        // Load the MotorcycleCategoryModel (assuming you have this model)
+        $motorcycleCategoryModel = new \App\Models\Motorcyclecategory_model();
+
+        // Retrieve the IndexKey from tbl_motorcycle_category
+        $indexKey = $motorcycleCategoryModel->where('category', $category)
+                                            ->where('model_type', $model_type)
+                                            ->get()
+                                            ->getRow('IndexKey');
+
+        if (!$indexKey) {
+            return $this->response->setJSON([
+                'success' => false,
+                'message' => 'Invalid category or model type.'
+            ]);
+        }
+
+        // Prepare data for insertion
         $data = [
             'pet_name'   => strtoupper($this->request->getPost('pet_name')),
             'model_code' => strtoupper($this->request->getPost('model_code')),
             'model_name' => strtoupper($this->request->getPost('model_name')),
-            'model_type' => strtoupper($this->request->getPost('model_type')),
-            'category'   => strtoupper($this->request->getPost('category')),
+            // 'model_type' => $model_type,
+            // 'category'   => $category,
+            'category_id' => $indexKey, // Store the IndexKey as category_id or as needed
         ];
 
         if ($this->motorcyclelist_model->recordExists($data)) {
@@ -71,6 +94,7 @@ class Motorcyclelist extends BaseController
                 'message' => 'Record already exists'
             ]);
         }
+
         // Load the session service
         $session = \Config\Services::session();
             
@@ -94,37 +118,15 @@ class Motorcyclelist extends BaseController
 
 
     public function edit($id)
-    {
-        $data = $this->motorcyclelist_model->find($id);
-        if ($data) {
-            return $this->response->setJSON(['success' => true, 'data' => $data]);
-        } else {
-            return $this->response->setJSON(['success' => false, 'message' => 'Data not found']);
-        }
+{
+    $data = $this->motorcyclelist_model->getMotorcycleById($id);
+    if ($data) {
+        return $this->response->setJSON(['success' => true, 'data' => $data]);
+    } else {
+        return $this->response->setJSON(['success' => false, 'message' => 'Data not found']);
     }
+}
 
-//     public function edit($id)
-// {
-//     $motorcycle = $this->motorcyclelist_model->find($id);
-    
-//     if ($motorcycle) {
-//         // Fetch categories and model types
-//         $categoryModel = new \App\Models\Motorcyclecategory_model(); // Ensure this model exists and is loaded
-//         $categories = $categoryModel->findAll();
-        
-//         $modelTypeModel = new \App\Models\Motorcyclecategory_model(); // Ensure this model exists and is loaded
-//         $modelTypes = $modelTypeModel->findAll();
-        
-//         return $this->response->setJSON([
-//             'success' => true,
-//             'data' => $motorcycle,
-//             'categories' => $categories,
-//             'modelTypes' => $modelTypes
-//         ]);
-//     } else {
-//         return $this->response->setJSON(['success' => false, 'message' => 'Data not found']);
-//     }
-// }
 
 
     public function update($id)
@@ -142,6 +144,26 @@ class Motorcyclelist extends BaseController
             if (!$validation->withRequest($this->request)->run()) {
                 return $this->response->setJSON(['success' => false, 'errors' => $validation->getErrors()]);
             }
+
+            // Get category and model_type values from the request
+            $category = strtoupper($this->request->getPost('category'));
+            $model_type = strtoupper($this->request->getPost('model_type'));
+
+            // Load the MotorcycleCategoryModel (assuming you have this model)
+            $motorcycleCategoryModel = new \App\Models\Motorcyclecategory_model();
+
+            // Retrieve the IndexKey from tbl_motorcycle_category
+            $indexKey = $motorcycleCategoryModel->where('category', $category)
+                                                ->where('model_type', $model_type)
+                                                ->get()
+                                                ->getRow('IndexKey');
+
+            if (!$indexKey) {
+                return $this->response->setJSON([
+                    'success' => false,
+                    'message' => 'Invalid category or model type.'
+                ]);
+            }
     
             // Load the session service
             $session = \Config\Services::session();
@@ -150,8 +172,7 @@ class Motorcyclelist extends BaseController
                 'pet_name' => strtoupper($this->request->getPost('pet_name')),
                 'model_code' => strtoupper($this->request->getPost('model_code')),
                 'model_name'  => strtoupper($this->request->getPost('model_name')),
-                'model_type'  => strtoupper($this->request->getPost('model_type')),
-                'category'     => strtoupper($this->request->getPost('category')),
+                'category_id' => $indexKey, // Store the IndexKey as category_id or as needed
                 'updated_at'   => date('Y-m-d H:i:s'),
                 'updated_by'   => $session->get('login_firstname').' '. $session->get('login_lastname'),
             ];

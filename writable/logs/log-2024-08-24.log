@@ -1,0 +1,244 @@
+CRITICAL - 2024-08-24 15:37:47 --> Call to undefined method Config\Mimes::getMimeType()
+in APPPATH\Controllers\FileController.php on line 29.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\FileController->view('1724483382_183344817ad5f3e8cc1c.pdf')
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FileController))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-24 15:51:59 --> Undefined variable $path
+in APPPATH\Controllers\FileController.php on line 16.
+ 1 APPPATH\Controllers\FileController.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $path', 'APPPATH\\Controllers\\FileController.php', 16)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\FileController->view('1724485840_9fc554d832d6a2b758ad.pdf')
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FileController))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-24 16:38:46 --> require_once(C:\xampp\htdocs\Yamaha_Portal\public/assets/TCPDF/tcpdf.php): Failed to open stream: No such file or directory
+in APPPATH\Controllers\Bulletin.php on line 87.
+ 1 APPPATH\Controllers\Bulletin.php(87): CodeIgniter\Debug\Exceptions->errorHandler(2, 'require_once(C:\\xampp\\htdocs\\Yamaha_Portal\\public/assets/TCPDF/tcpdf.php): Failed to open stream: No such file or directory', 'APPPATH\\Controllers\\Bulletin.php', 87)
+ 2 APPPATH\Controllers\Bulletin.php(87): require_once()
+ 3 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Bulletin->add()
+ 4 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Bulletin))
+ 5 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-24 16:41:56 --> require_once(C:\xampp\htdocs\Yamaha_Portal\public/assets/TCPDF/tcpdf.php): Failed to open stream: No such file or directory
+in APPPATH\Controllers\Bulletin.php on line 86.
+ 1 APPPATH\Controllers\Bulletin.php(86): CodeIgniter\Debug\Exceptions->errorHandler(2, 'require_once(C:\\xampp\\htdocs\\Yamaha_Portal\\public/assets/TCPDF/tcpdf.php): Failed to open stream: No such file or directory', 'APPPATH\\Controllers\\Bulletin.php', 86)
+ 2 APPPATH\Controllers\Bulletin.php(86): require_once()
+ 3 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Bulletin->add()
+ 4 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Bulletin))
+ 5 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-24 16:43:56 --> Call to undefined method TCPDF::setSourceFile()
+in APPPATH\Controllers\Bulletin.php on line 96.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Bulletin->add()
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Bulletin))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-24 16:47:33 --> Call to undefined method TCPDF::setSourceFile()
+in APPPATH\Controllers\Bulletin.php on line 104.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Bulletin->add()
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Bulletin))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-24 16:52:36 --> Call to undefined method TCPDF::setSourceFile()
+in APPPATH\Controllers\Bulletin.php on line 104.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Bulletin->add()
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Bulletin))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-24 16:54:45 --> Call to undefined method TCPDF::setSourceFile()
+in APPPATH\Controllers\Bulletin.php on line 102.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Bulletin->add()
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Bulletin))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-24 20:32:05 --> syntax error, unexpected token "use"
+in APPPATH\Controllers\Bulletin.php on line 90.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(261): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\Bulletin.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(239): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Bulletin')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Bulletin')
+ 4 SYSTEMPATH\CodeIgniter.php(846): class_exists('\\App\\Controllers\\Bulletin', true)
+ 5 SYSTEMPATH\CodeIgniter.php(453): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-24 20:33:18 --> Class declarations may not be nested
+in APPPATH\Controllers\Bulletin.php on line 91.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-08-24 20:35:26 --> syntax error, unexpected token "class", expecting "function" or "const"
+in APPPATH\Controllers\Bulletin.php on line 46.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(261): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\Bulletin.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(239): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Bulletin')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Bulletin')
+ 4 SYSTEMPATH\CodeIgniter.php(846): class_exists('\\App\\Controllers\\Bulletin', true)
+ 5 SYSTEMPATH\CodeIgniter.php(453): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-24 20:38:02 --> Class "App\Libraries\CustomPdf" not found
+in APPPATH\Controllers\Bulletin.php on line 83.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Bulletin->add()
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Bulletin))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-24 20:39:28 --> Class "App\Libraries\CustomPdf" not found
+in APPPATH\Controllers\Bulletin.php on line 83.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Bulletin->add()
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Bulletin))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-24 20:43:36 --> Class "App\Libraries\CustomPdf" not found
+in APPPATH\Controllers\Bulletin.php on line 85.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Bulletin->add()
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Bulletin))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-24 20:44:07 --> Class "App\Libraries\CustomPdf" not found
+in APPPATH\Controllers\Bulletin.php on line 85.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Bulletin->add()
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Bulletin))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-24 20:44:59 --> Class "App\Controllers\CustomPdf" not found
+in APPPATH\Controllers\Bulletin.php on line 85.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Bulletin->add()
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Bulletin))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-24 20:51:07 --> Class "TCPDF" not found
+in APPPATH\Controllers\Bulletin.php on line 95.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Bulletin->add()
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Bulletin))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-24 20:57:20 --> Class "setasign\Fpdi\Fpdi" not found
+in APPPATH\Controllers\Bulletin.php on line 94.
+ 1 APPPATH\Controllers\Bulletin.php(67): App\Controllers\Bulletin->addWatermark('FCPATH\\public\\assets\\uploads\\1724504240_36fda38e7452a285e1ff.pdf')
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Bulletin->add()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Bulletin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-24 20:57:35 --> Class "setasign\Fpdi\Fpdi" not found
+in APPPATH\Controllers\Bulletin.php on line 94.
+ 1 APPPATH\Controllers\Bulletin.php(67): App\Controllers\Bulletin->addWatermark('FCPATH\\public\\assets\\uploads\\1724504255_280e9a1151ef9fc3658c.pdf')
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Bulletin->add()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Bulletin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-08-24 21:08:58 --> Unknown column 'tbl_motorcyclelist.model_name' in 'field list'
+CRITICAL - 2024-08-24 21:08:58 --> Unknown column 'tbl_motorcyclelist.model_name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `tbl_motorcyclelist`.`model_name`, `tbl_motorcyclelist`.`IndexKey`, `tbl_motorcyclelist`.`pet_name`, `tbl_motorcyclelist`.`model_code`, `tbl_motorcycle_category`.`model_type`, `tbl_motorcycle_category`.`category`
+FROM `tbl_bulletins`
+LEFT JOIN `tbl_motorcycle_category` ON `tbl_motorcyclelist`.`category_id` = `tbl_motorcycle_category`.`IndexKey`
+WHERE `tbl_motorcyclelist`.`IndexKey` = \'00001\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tbl_motorcyclelist`.`model_name`, `tbl_motorcyclelist`.`IndexKey`, `tbl_motorcyclelist`.`pet_name`, `tbl_motorcyclelist`.`model_code`, `tbl_motorcycle_category`.`model_type`, `tbl_motorcycle_category`.`category`
+FROM `tbl_bulletins`
+LEFT JOIN `tbl_motorcycle_category` ON `tbl_motorcyclelist`.`category_id` = `tbl_motorcycle_category`.`IndexKey`
+WHERE `tbl_motorcyclelist`.`IndexKey` = \'00001\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tbl_motorcyclelist`.`model_name`, `tbl_motorcyclelist`.`IndexKey`, `tbl_motorcyclelist`.`pet_name`, `tbl_motorcyclelist`.`model_code`, `tbl_motorcycle_category`.`model_type`, `tbl_motorcycle_category`.`category`
+FROM `tbl_bulletins`
+LEFT JOIN `tbl_motorcycle_category` ON `tbl_motorcyclelist`.`category_id` = `tbl_motorcycle_category`.`IndexKey`
+WHERE `tbl_motorcyclelist`.`IndexKey` = \'00001\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `tbl_motorcyclelist`.`model_name`, `tbl_motorcyclelist`.`IndexKey`, `tbl_motorcyclelist`.`pet_name`, `tbl_motorcyclelist`.`model_code`, `tbl_motorcycle_category`.`model_type`, `tbl_motorcycle_category`.`category`
+FROM `tbl_bulletins`
+LEFT JOIN `tbl_motorcycle_category` ON `tbl_motorcyclelist`.`category_id` = `tbl_motorcycle_category`.`IndexKey`
+WHERE `tbl_motorcyclelist`.`IndexKey` = :tbl_motorcyclelist.IndexKey:', [...], false)
+ 5 SYSTEMPATH\Model.php(771): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Models\Bulletin_model.php(43): CodeIgniter\Model->__call('get', [])
+ 7 APPPATH\Controllers\Bulletin.php(162): App\Models\Bulletin_model->getMotorcycleById('00001')
+ 8 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Bulletin->edit('00001')
+ 9 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Bulletin))
+10 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-24 22:11:44 --> Undefined property: App\Controllers\FileController::$session
+in APPPATH\Controllers\FileController.php on line 40.
+ 1 APPPATH\Controllers\FileController.php(40): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\FileController::$session', 'APPPATH\\Controllers\\FileController.php', 40)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\FileController->download('1724505194_f2b0d7cfa8a42dc3a8fd.pdf')
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FileController))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-08-24 22:15:47 --> Username is null during file download for 1724505194_f2b0d7cfa8a42dc3a8fd.pdf
+ERROR - 2024-08-24 22:15:50 --> Username is null during file download for 1724505194_f2b0d7cfa8a42dc3a8fd.pdf
+CRITICAL - 2024-08-24 22:20:16 --> Creation of dynamic property App\Controllers\FileController::$data is deprecated
+in APPPATH\Controllers\FileController.php on line 17.
+ 1 APPPATH\Controllers\FileController.php(17): CodeIgniter\Debug\Exceptions->errorHandler(8192, 'Creation of dynamic property App\\Controllers\\FileController::$data is deprecated', 'APPPATH\\Controllers\\FileController.php', 17)
+ 2 SYSTEMPATH\CodeIgniter.php(858): App\Controllers\FileController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-24 22:20:20 --> Creation of dynamic property App\Controllers\FileController::$data is deprecated
+in APPPATH\Controllers\FileController.php on line 17.
+ 1 APPPATH\Controllers\FileController.php(17): CodeIgniter\Debug\Exceptions->errorHandler(8192, 'Creation of dynamic property App\\Controllers\\FileController::$data is deprecated', 'APPPATH\\Controllers\\FileController.php', 17)
+ 2 SYSTEMPATH\CodeIgniter.php(858): App\Controllers\FileController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-24 22:20:22 --> Creation of dynamic property App\Controllers\FileController::$data is deprecated
+in APPPATH\Controllers\FileController.php on line 17.
+ 1 APPPATH\Controllers\FileController.php(17): CodeIgniter\Debug\Exceptions->errorHandler(8192, 'Creation of dynamic property App\\Controllers\\FileController::$data is deprecated', 'APPPATH\\Controllers\\FileController.php', 17)
+ 2 SYSTEMPATH\CodeIgniter.php(858): App\Controllers\FileController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-24 22:20:23 --> Creation of dynamic property App\Controllers\FileController::$data is deprecated
+in APPPATH\Controllers\FileController.php on line 17.
+ 1 APPPATH\Controllers\FileController.php(17): CodeIgniter\Debug\Exceptions->errorHandler(8192, 'Creation of dynamic property App\\Controllers\\FileController::$data is deprecated', 'APPPATH\\Controllers\\FileController.php', 17)
+ 2 SYSTEMPATH\CodeIgniter.php(858): App\Controllers\FileController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-24 22:20:24 --> Creation of dynamic property App\Controllers\FileController::$data is deprecated
+in APPPATH\Controllers\FileController.php on line 17.
+ 1 APPPATH\Controllers\FileController.php(17): CodeIgniter\Debug\Exceptions->errorHandler(8192, 'Creation of dynamic property App\\Controllers\\FileController::$data is deprecated', 'APPPATH\\Controllers\\FileController.php', 17)
+ 2 SYSTEMPATH\CodeIgniter.php(858): App\Controllers\FileController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-08-24 22:21:36 --> Username is null during file download for 1724505194_f2b0d7cfa8a42dc3a8fd.pdf
+ERROR - 2024-08-24 22:22:31 --> Username is null during file download for 1724505194_f2b0d7cfa8a42dc3a8fd.pdf
+ERROR - 2024-08-24 22:24:53 --> Username is null during file download for 1724505194_f2b0d7cfa8a42dc3a8fd.pdf
+ERROR - 2024-08-24 22:25:28 --> Username is null during file download for 1724505194_f2b0d7cfa8a42dc3a8fd.pdf
+ERROR - 2024-08-24 22:27:04 --> Username is null or empty during file download for 1724505194_f2b0d7cfa8a42dc3a8fd.pdf
+ERROR - 2024-08-24 22:31:45 --> Username is null or empty during file download for 1724509766_d692d0b6c968ca9b7d4c.pdf
+ERROR - 2024-08-24 22:32:59 --> Username is null or empty during file download for 1724509766_d692d0b6c968ca9b7d4c.pdf
+ERROR - 2024-08-24 22:34:09 --> Username is null or empty during file download for 1724509766_d692d0b6c968ca9b7d4c.pdf
+CRITICAL - 2024-08-24 22:41:28 --> Creation of dynamic property App\Controllers\FileController::$data is deprecated
+in APPPATH\Controllers\FileController.php on line 15.
+ 1 APPPATH\Controllers\FileController.php(15): CodeIgniter\Debug\Exceptions->errorHandler(8192, 'Creation of dynamic property App\\Controllers\\FileController::$data is deprecated', 'APPPATH\\Controllers\\FileController.php', 15)
+ 2 SYSTEMPATH\CodeIgniter.php(858): App\Controllers\FileController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-24 22:41:39 --> Creation of dynamic property App\Controllers\FileController::$data is deprecated
+in APPPATH\Controllers\FileController.php on line 15.
+ 1 APPPATH\Controllers\FileController.php(15): CodeIgniter\Debug\Exceptions->errorHandler(8192, 'Creation of dynamic property App\\Controllers\\FileController::$data is deprecated', 'APPPATH\\Controllers\\FileController.php', 15)
+ 2 SYSTEMPATH\CodeIgniter.php(858): App\Controllers\FileController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-24 22:50:37 --> Undefined variable $title
+in APPPATH\Controllers\Bulletin.php on line 61.
+ 1 APPPATH\Controllers\Bulletin.php(61): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $title', 'APPPATH\\Controllers\\Bulletin.php', 61)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Bulletin->add()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Bulletin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-24 22:53:15 --> Too few arguments to function App\Models\Bulletin_model::recordExists(), 1 passed in C:\xampp\htdocs\Yamaha_Portal\app\Controllers\Bulletin.php on line 60 and exactly 2 expected
+in APPPATH\Models\Bulletin_model.php on line 18.
+ 1 APPPATH\Controllers\Bulletin.php(60): App\Models\Bulletin_model->recordExists([...])
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Bulletin->add()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Bulletin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-24 22:57:56 --> Undefined variable $title
+in APPPATH\Controllers\Bulletin.php on line 60.
+ 1 APPPATH\Controllers\Bulletin.php(60): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $title', 'APPPATH\\Controllers\\Bulletin.php', 60)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Bulletin->add()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Bulletin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-08-24 22:58:15 --> Undefined variable $title
+in APPPATH\Controllers\Bulletin.php on line 60.
+ 1 APPPATH\Controllers\Bulletin.php(60): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $title', 'APPPATH\\Controllers\\Bulletin.php', 60)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Bulletin->add()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Bulletin))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()

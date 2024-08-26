@@ -14,10 +14,12 @@
           <div class="mb-3 col-12 col-md-12 col-sm-12">
               <label for="category" class="form-label">Category</label>
               <input type="category" name="category" id="category" class="form-control">
+              <div class="invalid-feedback">This field is required.</div>
             </div>
             <div class="mb-3 col-12 col-md-12 col-sm-12">
               <label for="model_type" class="form-label">Model Type</label>
               <input type="text" name="model_type" id="model_type" class="form-control">
+              <div class="invalid-feedback">This field is required.</div>
             </div>
            
          

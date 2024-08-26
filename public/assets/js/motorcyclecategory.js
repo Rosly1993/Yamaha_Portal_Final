@@ -16,7 +16,7 @@ $(document).ready(function () {
             }
         },
         "columns": [
-            { data: 'id', className: 'table-cell text-center font-size-14' },        
+            { data: 'IndexKey', className: 'table-cell text-center font-size-14' },        
             { data: 'category', className: 'table-cell text-center font-size-14' },
             { data: 'model_type', className: 'table-cell text-center font-size-14' },
             { data: 'created_by', className: 'table-cell text-center font-size-14' },
@@ -35,6 +35,7 @@ $(document).ready(function () {
             {
                 data: null,
                 className: 'table-cell text-center font-size-14',
+                responsivePriority: 1, // Ensures this column stays visible
                 render: function (data, type, row) {
                     let buttons = '<a class="btn-primary edit-btn"><i class="fas fa-user-edit"></i></a>';
             
@@ -52,6 +53,7 @@ $(document).ready(function () {
             
         ],
         "responsive": true,
+        autoWidth: false, 
         "lengthMenu": [
             [10, 25, 50, 100, -1],
             [10, 25, 50, 100, "All"]
@@ -161,11 +163,11 @@ $('#addItemForm').on('submit', function (e) {
 
   $('#items_table tbody').on('click', '.edit-btn', function () {
       var data = table.row($(this).parents('tr')).data();
-      var id = data.id;
+      var id = data.IndexKey;
 
       // Store original data
       originalData = {
-          id: data.id,
+          id: data.IndexKey,
           model_type: data.model_type,
           category: data.category
       };
@@ -181,7 +183,7 @@ $('#addItemForm').on('submit', function (e) {
                   // Populate your edit modal with user data
                   $('#editModal #model_type').val(response.data.model_type);
                   $('#editModal #category').val(response.data.category);
-                  $('#editModal #user-id').val(response.data.id);
+                  $('#editModal #user-id').val(response.data.IndexKey);
                   $('#editModal').modal('show');
               } else {
                   Swal.fire({
@@ -194,6 +196,10 @@ $('#addItemForm').on('submit', function (e) {
       });
   });
 
+   // Helper function to safely trim a value
+function safeTrim(value) {
+    return value ? value.trim() : '';
+}
   // Edit form submission
   $('#editForm').on('submit', function (e) {
       e.preventDefault();
@@ -201,10 +207,9 @@ $('#addItemForm').on('submit', function (e) {
       var id = $('#editModal #user-id').val();
 
       // Get the current values from the form
-    
-      var model_type = $('#editModal #model_type').val().trim();
-      var category = $('#editModal #category').val().trim();
-      
+  
+      var model_type = safeTrim($('#editModal #model_type').val());
+      var category = safeTrim($('#editModal #category').val());
 
       var currentData = {
           id: id,
@@ -214,7 +219,29 @@ $('#addItemForm').on('submit', function (e) {
       };
 
       console.log('Current Data:', currentData); // Log current data
+       // Clear previous highlights and error messages
+       $('#editModal input, #editModal select').removeClass('is-invalid');
+       $('#editModal .invalid-feedback').hide();
 
+       // Check for empty fields
+       var isValid = true;
+       $.each(currentData, function (key, value) {
+           if (value === '') {
+               var $input = $('#editModal #' + key);
+               $input.addClass('is-invalid'); // Highlight empty field in red
+               $input.next('.invalid-feedback').show(); // Show error message
+               isValid = false;
+           }
+       });
+
+       if (!isValid) {
+           Swal.fire({
+               icon: 'warning',
+               title: 'Validation Error',
+               text: 'Please fill out all required fields.'
+           });
+           return; // Stop form submission if any field is empty
+       }
       // Check if data has changed
       var hasChanges = false;
       $.each(originalData, function (key, value) {
@@ -246,7 +273,7 @@ $('#addItemForm').on('submit', function (e) {
                   Swal.fire({
                       icon: 'success',
                       title: 'Updated!',
-                      text: 'User information has been updated.'
+                      text: 'Information has been updated.'
                   }).then(function () {
                       table.ajax.reload();
                   });
@@ -272,7 +299,7 @@ $('#addItemForm').on('submit', function (e) {
   // Activate button click
   $('#items_table tbody').on('click', '.activate-btn', function () {
       var data = table.row($(this).parents('tr')).data();
-      var id = data.id;
+      var id = data.IndexKey;
 
       Swal.fire({
           title: 'Are you sure?',
@@ -313,7 +340,7 @@ $('#addItemForm').on('submit', function (e) {
   // Deactivate button click
   $('#items_table tbody').on('click', '.deactivate-btn', function () {
     var data = table.row($(this).parents('tr')).data();
-    var id = data.id;
+    var id = data.IndexKey;
 
     Swal.fire({
         title: 'Are you sure?',

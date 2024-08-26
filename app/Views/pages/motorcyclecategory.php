@@ -17,7 +17,7 @@
                                             <li class="breadcrumb-item active">Datatables</li>
                                         </ol> -->
                                     </div>
-                                    <h4 class="page-title">User's Information</h4>
+                                    <h4 class="page-title">Motorcycle's  Category</h4>
                                 </div>
                             </div>
                         </div>

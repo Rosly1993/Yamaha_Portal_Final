@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class Motorcyclecategory_model extends Model
 {
     protected $table = 'tbl_motorcycle_category';
-    protected $primaryKey = 'id';
+    protected $primaryKey = 'IndexKey';
     protected $allowedFields = [
         'category','model_type', 'is_active', 'created_by', 'created_at', 'updated_by', 'updated_at'
     ];
@@ -36,7 +36,7 @@ class Motorcyclecategory_model extends Model
         $builder->where($data);
     
         if ($id !== null) {
-            $builder->where('id !=', $id);
+            $builder->where('IndexKey !=', $id);
         }
     
         $result = $builder->get()->getRow();

@@ -1,4 +1,7 @@
-        <!-- Begin page -->
+
+      
+      
+      <!-- Begin page -->
         <div id="wrapper">
 
             
@@ -8,15 +11,16 @@
                 <!-- Brand Logo -->
                 <div class="logo-box">
                     <!-- Brand Logo Light -->
-                    <a href="index.html" class="logo-light">
-                        <img src="<?= base_url('public/assets/images/logo-light.png') ?>" alt="logo" class="logo-lg">
-                        <img src="<?= base_url('public/assets/images/logo-sm.png') ?>" alt="small logo" class="logo-sm">
+                    <a href="" class="logo-light">
+                    <img src="<?= base_url('public/assets/images/YamahaLogo.png') ?>" alt="dark logo" class="logo-lg" height="100">
+                    <img src="<?= base_url('public/assets/images/YamahaLogo.png') ?>" alt="small logo" class="logo-sm" height="50">&nbsp;<b>Yamaha</b>
                     </a>
 
                     <!-- Brand Logo Dark -->
-                    <a href="index.html" class="logo-dark">
-                        <img src="<?= base_url('public/assets/images/logo-dark.png') ?>" alt="dark logo" class="logo-lg">
-                        <img src="<?= base_url('public/assets/images/logo-sm.png') ?>" alt="small logo" class="logo-sm">
+                   <!-- Brand Logo Dark -->
+                    <a href="" class="logo-dark">
+                        <img src="<?= base_url('public/assets/images/YamahaLogo.png') ?>" alt="dark logo" class="logo-lg" height="100">
+                        <img src="<?= base_url('public/assets/images/YamahaLogo.png') ?>" alt="small logo" class="logo-sm" height="50">&nbsp;<b>Yamaha</b>
                     </a>
                 </div>
 
@@ -64,7 +68,7 @@
                             <a href="#menuDashboards" data-bs-toggle="collapse" class="menu-link">
                                 <span class="menu-icon"><i class="mdi mdi-view-dashboard-outline"></i></span>
                                 <span class="menu-text"> Dashboard </span>
-                                <span class="badge bg-success rounded-pill ms-auto">4</span>
+                                <!-- <span class="badge bg-success rounded-pill ms-auto">4</span> -->
                             </a>
                             <div class="collapse" id="menuDashboards">
                                 <ul class="sub-menu">
@@ -77,20 +81,34 @@
                                 </ul>
                             </div>
                         </li>
-<!-- 
-                        <li class="menu-title">Apps</li>
 
-                      
-
-                     
+                        <li class="menu-title">Main Pages</li>
 
                         <li class="menu-item">
-                            <a href="apps-file-manager.html" class="menu-link">
+                            <a href="<?= base_url('Motorcyclelist') ?>" class="menu-link">
                                 <span class="menu-icon"><i class="mdi mdi-folder-star-outline"></i></span>
-                                <span class="menu-text"> File Manager </span>
+                                <span class="menu-text"> Motorcycle List </span>
                             </a>
-                        </li> -->
-
+                        </li>
+                        <li class="menu-item">
+                            <a href="<?= base_url('Branchlist') ?>" class="menu-link">
+                                <span class="menu-icon"><i class="mdi mdi-folder-star-outline"></i></span>
+                                <span class="menu-text"> 3s Branch List </span>
+                            </a>
+                        </li>
+                      
+                        <li class="menu-item">
+                            <a href="<?= base_url('Servicemanuals') ?>" class="menu-link">
+                                <span class="menu-icon"><i class="mdi mdi-folder-star-outline"></i></span>
+                                <span class="menu-text"> Service Manuals </span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="<?= base_url('Servicebulletins') ?>" class="menu-link">
+                                <span class="menu-icon"><i class="mdi mdi-folder-star-outline"></i></span>
+                                <span class="menu-text"> Service Bulletins </span>
+                            </a>
+                        </li>
                         <!-- <li class="menu-title">System Maintenance</li> -->
 
                       
@@ -103,28 +121,32 @@
                             </a>
                             <div class="collapse" id="menuTables">
                                 <ul class="sub-menu">
-                                   
-                                    <li class="menu-item">
-                                        <a href="<?= base_url('Table') ?>" class="menu-link">
-                                            <span class="menu-text">Users Tables</span>
-                                        </a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="<?= base_url('Motorcyclelist') ?>" class="menu-link">
-                                            <span class="menu-text">Motorcycle List</span>
-                                        </a>
-                                    </li>
+
                                     <li class="menu-item">
                                         <a href="<?= base_url('Motorcyclecategory') ?>" class="menu-link">
                                             <span class="menu-text">Motorcycle Category</span>
                                         </a>
                                     </li>
-
+                                    <li class="menu-item">
+                                        <a href="<?= base_url('Location') ?>" class="menu-link">
+                                            <span class="menu-text">Location</span>
+                                        </a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="<?= base_url('Table') ?>" class="menu-link">
+                                            <span class="menu-text">Users Tables</span>
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                         </li>
 
-                      
+                        <li class="menu-item">
+                            <a href="<?= base_url('Activitylogs') ?>" class="menu-link">
+                                <span class="menu-icon"><i class="mdi mdi-folder-star-outline"></i></span>
+                                <span class="menu-text"> Activity Logs </span>
+                            </a>
+                        </li>
 
                     </ul>
                     <!--- End Menu -->
@@ -144,14 +166,14 @@
             <div class="logo-box">
                 <!-- Brand Logo Light -->
                 <a href="index.html" class="logo-light">
-                    <img src="" alt="logo" class="logo-lg">
-                    <img src="" alt="small logo" class="logo-sm">
+                    <!-- <img src="" alt="logo" class="logo-lg">
+                    <img src="" alt="small logo" class="logo-sm"> -->
                 </a>
 
                 <!-- Brand Logo Dark -->
                 <a href="index.html" class="logo-dark">
-                    <img src="" alt="dark logo" class="logo-lg">
-                    <img src="" alt="small logo" class="logo-sm">
+                    <!-- <img src="" alt="dark logo" class="logo-lg">
+                    <img src="" alt="small logo" class="logo-sm"> -->
                 </a>
             </div>
 

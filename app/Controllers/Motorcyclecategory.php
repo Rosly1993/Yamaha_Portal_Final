@@ -34,7 +34,7 @@ public function getModelTypes()
     // Prepare data for response
     $data = array_map(function($item) {
         return [
-            'id' => $item['id'], // Ensure 'id' exists in your database schema
+            'id' => $item['IndexKey'], // Ensure 'id' exists in your database schema
             'model_type' => $item['model_type']
         ];
     }, $modelTypes);

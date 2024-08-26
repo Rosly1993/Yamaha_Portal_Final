@@ -63,3 +63,49 @@
 .text-success {
     color: green;
 }
+.is-invalid {
+    border: 2px solid #FF4E88;
+
+}
+
+.table-responsive {
+    overflow-x: auto; /* Allows horizontal scrolling */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on touch devices */
+}
+
+.dataTables_wrapper {
+    width: 99.9% !important; /* Ensures wrapper takes full width */
+}
+
+#items_table {
+    width: 99.9% !important; /* Forces table to respect container width */
+}
+.logo-box .logo-lg {
+    height: 65px !important; /* Force the height */
+    width: auto; /* Maintain aspect ratio */
+    
+}
+.text-wrap {
+    white-space: normal !important;
+    word-wrap: break-word;
+}
+
+/* Custom button colors */
+.btn-excel {
+    background-color: #06D001;
+    color: white;
+}
+
+.btn-print {
+    background-color: #FF7777;
+    color: white;
+}
+
+.btn-copy {
+    background-color: #4B70F5;
+    color: white;
+}
+
+.btn-excel:hover, .btn-print:hover, .btn-copy:hover {
+    opacity: 0.8; /* Optional: Add some opacity on hover */
+}

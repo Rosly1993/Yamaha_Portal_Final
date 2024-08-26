@@ -17,7 +17,7 @@ $(document).ready(function () {
             }
         },
         "columns": [
-            { data: 'id', className: 'table-cell text-center font-size-14' },
+            { data: 'IndexKey', className: 'table-cell text-center font-size-14' },
             { data: 'pet_name', className: 'table-cell text-center font-size-14' },
             { data: 'model_code', className: 'table-cell text-center font-size-14' },
             { data: 'model_name', className: 'table-cell text-center font-size-14' },
@@ -39,6 +39,7 @@ $(document).ready(function () {
             {
                 data: null,
                 className: 'table-cell text-center font-size-14',
+                responsivePriority: 1, // Ensures this column stays visible
                 render: function (data, type, row) {
                     let buttons = '<a class="btn-primary edit-btn"><i class="fas fa-user-edit"></i></a>';
             
@@ -169,11 +170,11 @@ $('#addItemForm').on('submit', function (e) {
    
     $('#items_table tbody').on('click', '.edit-btn', function () {
         var data = table.row($(this).parents('tr')).data();
-        var id = data.id;
+        var id = data.IndexKey;
 
         // Store original data
         originalData = {
-            id: data.id,
+            id: data.IndexKey,
             pet_name: data.pet_name,
             model_code: data.model_code,
             model_name: data.model_name,
@@ -195,7 +196,7 @@ $('#addItemForm').on('submit', function (e) {
                     $('#editModal #pet_name').val(response.data.pet_name);
                     $('#editModal #model_code').val(response.data.model_code);
                     $('#editModal #model_name').val(response.data.model_name);
-                    $('#editModal #user-id').val(response.data.id);
+                    $('#editModal #user-id').val(response.data.IndexKey);
 
                     // Fetch categories and set selected value
                     $.ajax({
@@ -233,7 +234,7 @@ $('#addItemForm').on('submit', function (e) {
         });
     });
 
-    // Function to fetch and populate model types based on category
+  
    // Function to fetch and populate model types based on category
 function fetchModelTypes(categoryId) {
     $.ajax({
@@ -257,21 +258,23 @@ function fetchModelTypes(categoryId) {
 }
 });
 
-
-
-
+// Helper function to safely trim a value
+function safeTrim(value) {
+    return value ? value.trim() : '';
+}
   // Edit form submission
   $('#editForm').on('submit', function (e) {
       e.preventDefault();
 
       var id = $('#editModal #user-id').val();
 
-      // Get the current values from the form
-      var pet_name = $('#editModal #pet_name').val().trim();
-      var model_code = $('#editModal #model_code').val().trim();
-      var model_name = $('#editModal #model_name').val().trim();
-      var model_type = $('#editModal #model_type').val().trim();
-      var category = $('#editModal #category').val().trim();
+        // Get the current values from the form and use safeTrim
+        var pet_name = safeTrim($('#editModal #pet_name').val());
+        var model_code = safeTrim($('#editModal #model_code').val());
+        var model_name = safeTrim($('#editModal #model_name').val());
+        var model_type = safeTrim($('#editModal #model_type').val());
+        var category = safeTrim($('#editModal #category').val());
+ 
       
 
       var currentData = {
@@ -285,7 +288,31 @@ function fetchModelTypes(categoryId) {
       };
 
       console.log('Current Data:', currentData); // Log current data
+      
+    // Clear previous highlights and error messages
+    $('#editModal input, #editModal select').removeClass('is-invalid');
+    $('#editModal .invalid-feedback').hide();
 
+    // Check for empty fields
+    var isValid = true;
+    $.each(currentData, function (key, value) {
+        if (value === '') {
+            var $input = $('#editModal #' + key);
+            $input.addClass('is-invalid'); // Highlight empty field in red
+            $input.next('.invalid-feedback').show(); // Show error message
+            isValid = false;
+        }
+    });
+
+    if (!isValid) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Validation Error',
+            text: 'Please fill out all required fields.'
+        });
+        return; // Stop form submission if any field is empty
+    }
+    
       // Check if data has changed
       var hasChanges = false;
       $.each(originalData, function (key, value) {
@@ -317,7 +344,7 @@ function fetchModelTypes(categoryId) {
                   Swal.fire({
                       icon: 'success',
                       title: 'Updated!',
-                      text: 'User information has been updated.'
+                      text: 'Information has been updated.'
                   }).then(function () {
                       table.ajax.reload();
                   });
@@ -343,7 +370,7 @@ function fetchModelTypes(categoryId) {
   // Activate button click
   $('#items_table tbody').on('click', '.activate-btn', function () {
       var data = table.row($(this).parents('tr')).data();
-      var id = data.id;
+      var id = data.IndexKey;
 
       Swal.fire({
           title: 'Are you sure?',
@@ -384,7 +411,7 @@ function fetchModelTypes(categoryId) {
   // Deactivate button click
   $('#items_table tbody').on('click', '.deactivate-btn', function () {
     var data = table.row($(this).parents('tr')).data();
-    var id = data.id;
+    var id = data.IndexKey;
 
     Swal.fire({
         title: 'Are you sure?',
