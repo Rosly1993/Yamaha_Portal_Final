@@ -12,16 +12,16 @@
         <link rel="shortcut icon" href="<?= base_url('public/assets/images/favicon.ico') ?>">
 
 		<!-- Theme Config Js -->
-		<script src="http://localhost/Yamaha_Portal/public/assets/js/head.js"></script>
+		<script src="<?= base_url('public/assets/js/head.js') ?>"></script>
 
 		<!-- Bootstrap css -->
-		<link href="http://localhost/Yamaha_Portal/public/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="app-style" />
+		<link href="<?= base_url('public/assets/css/bootstrap.min.css') ?>" rel="stylesheet" type="text/css" id="app-style" />
 
 		<!-- App css -->
-		<link href="http://localhost/Yamaha_Portal/public/assets/css/app.min.css" rel="stylesheet" type="text/css" />
+		<link href="<?= base_url('public/assets/css/app.min.css') ?>" rel="stylesheet" type="text/css" />
 
 		<!-- Icons css -->
-		<link href="http://localhost/Yamaha_Portal/public/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+		<link href="<?= base_url('public/assets/css/icons.min.css') ?>" rel="stylesheet" type="text/css" />
     </head>
 
     <body class="authentication-bg authentication-bg-pattern">

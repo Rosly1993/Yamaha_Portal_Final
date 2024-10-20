@@ -47,7 +47,7 @@ class Activitylogs extends BaseController
     
         // Get sorting parameters with fallback to default
         $order = $request->getGet('order');
-        $columns = ['IndexKey', 'username', 'activity', 'details', 'date_record']; // Columns array
+        $columns = ['IndexKey', 'ip_address', 'username', 'activity', 'details', 'date_record']; // Columns array
         
         // Set default sorting parameters if 'order' is not set
         $orderColumn = $order[0]['column'] ?? 0; // Default to first column if not provided
@@ -63,7 +63,8 @@ class Activitylogs extends BaseController
     
         if ($searchValue) {
             $query = $query->groupStart()
-                           ->like('username', $searchValue)
+                           ->like('ip_address', $searchValue)
+                           ->orLike('username', $searchValue)
                            ->orLike('activity', $searchValue)
                            ->orLike('details', $searchValue)
                            ->groupEnd();

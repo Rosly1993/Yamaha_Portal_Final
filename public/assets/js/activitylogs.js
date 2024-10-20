@@ -36,6 +36,7 @@ $(document).ready(function () {
         },
         "columns": [
             { data: 'IndexKey', className: 'table-cell text-center font-size-14' },
+            { data: 'ip_address', className: 'table-cell text-center font-size-14' },
             { data: 'username', className: 'table-cell text-center font-size-14' },
             { data: 'activity', className: 'table-cell text-center font-size-14' },
             { data: 'details', className: 'table-cell text-center font-size-14 text-wrap' },

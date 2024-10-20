@@ -14,8 +14,10 @@
         <link href="<?= base_url('public/assets/libs/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css') ?>" rel="stylesheet" type="text/css" />
         <link href="<?= base_url('public/assets/libs/datatables.net-select-bs5/css/select.bootstrap5.min.css') ?>" rel="stylesheet" type="text/css" />
         <!-- third party css end -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
-        <link href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css" rel="stylesheet" type="text/css" />
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"> -->
+        <link href="<?= base_url('public/assets/css/bootstrap-datepicker.min.css') ?>" rel="stylesheet" type="text/css" />
+        <link href="<?= base_url('public/assets/css/buttons.dataTables.min.css') ?>" rel="stylesheet" type="text/css" />
+        <!-- <link href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css" rel="stylesheet" type="text/css" /> -->
 		<!-- Theme Config Js -->
 		<script src="<?= base_url('public/assets/js/head.js') ?>"></script>
 

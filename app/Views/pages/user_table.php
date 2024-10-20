@@ -1,5 +1,6 @@
 <?= $this->include('layouts/main_header') ?>
 <?= $this->include('layouts/main_sidebar') ?>
+<?php include('./app/views/layouts/add_script.php'); ?>
 
                 <div class="content">
 
@@ -33,20 +34,30 @@
               
                                         <p class="text-muted font-13 mb-4">
                                            <!-- Button trigger modal -->
+                                           <?php if ($is_add_Users == 1): ?>
                                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                            <i class="fa fa-plus">&nbsp;&nbsp;</i> Add New User
                                             </button>
+                                            <?php endif; ?>
                                         </p>
 
                                         <table id="items_table" class="table table-striped dt-responsive nowrap w-100">
                                             <thead class="table_header">
                                                 <tr>
-                                                    <th>ID</th>
+                                                    <th>ID Number</th>
                                                     <th>Firstname</th>
                                                     <th>Middlename</th>
                                                     <th>Lastsname</th>
                                                     <th>Username</th>
+                                                    <th>Gender</th>
+                                                    <th>Date of Birth</th>
                                                     <th>Email Address</th>
+                                                    <th>Phone Number</th>
+                                                    <th>Employee Type</th>
+                                                    <th>Date Started</th>
+                                                    <th>Head Office</th>
+                                                    <th>Branch Name</th>
+                                                    <th>Area</th>
                                                     <th>Status</th>
                                                     <th>Action</th>
                                                
@@ -70,12 +81,18 @@
 
                 <div id="data-table-url" data-url="<?= base_url('Table/getUsers') ?>"></div>
                 <div id="url-base" data-url="<?= site_url('Table/') ?>"></div>
+                <div id="is_edit" data-value="<?php echo $is_edit_Users; ?>"></div>
+                <div id="is_delete" data-value="<?php echo $is_delete_Users; ?>"></div>
+
+
                 <?= $this->include('modals/add_user') ?>
                 <?= $this->include('modals/edit_user') ?>
                 <?= $this->include('layouts/main_footer') ?>   
                 <script>
                 var dataTableUrl = '<?= base_url('Table/getUsers') ?>';
                 var baseURL = '<?= site_url('Table/') ?>';
+                var is_edit = $('#is_edit').data('value'); // Use .data() to get the value of data attribute
+                var is_delete = $('#is_delete').data('value'); // Use .data() to get the value of data attribute
                 </script>
 
 

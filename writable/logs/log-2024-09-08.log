@@ -1,0 +1,113 @@
+CRITICAL - 2024-09-08 20:04:00 --> syntax error, unexpected single-quoted string "location_id", expecting "]"
+in APPPATH\Controllers\Table.php on line 329.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(261): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\Table.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(239): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Table')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Table')
+ 4 SYSTEMPATH\CodeIgniter.php(846): class_exists('\\App\\Controllers\\Table', true)
+ 5 SYSTEMPATH\CodeIgniter.php(453): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-08 20:20:26 --> Class "App\Models\UserModel" not found
+in APPPATH\Controllers\Table.php on line 140.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Table->add()
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Table))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-08 20:20:50 --> Class "App\Models\UserModel" not found
+in APPPATH\Controllers\Table.php on line 140.
+ 1 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Table->add()
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Table))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-09-08 20:32:25 --> Unknown column 'role_id' in 'where clause'
+CRITICAL - 2024-09-08 20:32:25 --> Unknown column 'role_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `latest_usernumber`
+FROM `tbl_roles`
+WHERE `role_id` = 5
+ORDER BY `created_at` DESC
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `latest_usernumber`
+FROM `tbl_roles`
+WHERE `role_id` = 5
+ORDER BY `created_at` DESC
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `latest_usernumber`
+FROM `tbl_roles`
+WHERE `role_id` = 5
+ORDER BY `created_at` DESC
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `latest_usernumber`
+FROM `tbl_roles`
+WHERE `role_id` = :role_id:
+ORDER BY `created_at` DESC
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Model.php(249): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(622): CodeIgniter\Model->doFirst()
+ 7 APPPATH\Controllers\Table.php(144): CodeIgniter\BaseModel->first()
+ 8 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Table->add()
+ 9 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Table))
+10 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-09-08 20:32:33 --> Unknown column 'role_id' in 'where clause'
+CRITICAL - 2024-09-08 20:32:33 --> Unknown column 'role_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `latest_usernumber`
+FROM `tbl_roles`
+WHERE `role_id` = 5
+ORDER BY `created_at` DESC
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `latest_usernumber`
+FROM `tbl_roles`
+WHERE `role_id` = 5
+ORDER BY `created_at` DESC
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `latest_usernumber`
+FROM `tbl_roles`
+WHERE `role_id` = 5
+ORDER BY `created_at` DESC
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `latest_usernumber`
+FROM `tbl_roles`
+WHERE `role_id` = :role_id:
+ORDER BY `created_at` DESC
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Model.php(249): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(622): CodeIgniter\Model->doFirst()
+ 7 APPPATH\Controllers\Table.php(144): CodeIgniter\BaseModel->first()
+ 8 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Table->add()
+ 9 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Table))
+10 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-08 20:32:59 --> substr(): Passing null to parameter #1 ($string) of type string is deprecated
+in APPPATH\Controllers\Table.php on line 147.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'substr(): Passing null to parameter #1 ($string) of type string is deprecated', 'APPPATH\\Controllers\\Table.php', 147)
+ 2 APPPATH\Controllers\Table.php(147): substr(null, 4)
+ 3 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Table->add()
+ 4 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Table))
+ 5 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-08 20:33:16 --> substr(): Passing null to parameter #1 ($string) of type string is deprecated
+in APPPATH\Controllers\Table.php on line 147.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'substr(): Passing null to parameter #1 ($string) of type string is deprecated', 'APPPATH\\Controllers\\Table.php', 147)
+ 2 APPPATH\Controllers\Table.php(147): substr(null, 4)
+ 3 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Table->add()
+ 4 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Table))
+ 5 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-08 20:35:31 --> substr(): Passing null to parameter #1 ($string) of type string is deprecated
+in APPPATH\Controllers\Table.php on line 147.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'substr(): Passing null to parameter #1 ($string) of type string is deprecated', 'APPPATH\\Controllers\\Table.php', 147)
+ 2 APPPATH\Controllers\Table.php(147): substr(null, 4)
+ 3 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Table->add()
+ 4 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Table))
+ 5 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-08 20:35:42 --> substr(): Passing null to parameter #1 ($string) of type string is deprecated
+in APPPATH\Controllers\Table.php on line 147.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'substr(): Passing null to parameter #1 ($string) of type string is deprecated', 'APPPATH\\Controllers\\Table.php', 147)
+ 2 APPPATH\Controllers\Table.php(147): substr(null, 4)
+ 3 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Table->add()
+ 4 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Table))
+ 5 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()

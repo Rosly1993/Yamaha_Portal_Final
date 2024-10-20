@@ -1,0 +1,384 @@
+CRITICAL - 2024-09-15 11:07:35 --> Call to undefined function set_value()
+in APPPATH\Views\login\registration.php on line 81.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('login/registration', [], true)
+ 4 APPPATH\Controllers\LoginController.php(219): view('login/registration', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\LoginController->registration()
+ 6 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-15 11:07:38 --> Call to undefined function set_value()
+in APPPATH\Views\login\registration.php on line 81.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('login/registration', [], true)
+ 4 APPPATH\Controllers\LoginController.php(219): view('login/registration', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\LoginController->registration()
+ 6 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-15 11:35:19 --> Invalid file: layouts/login_base.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('layouts/login_base.php')
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->render('layouts/login_base', [], true)
+ 3 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('login/registration', [], true)
+ 4 APPPATH\Controllers\LoginController.php(219): view('login/registration', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\LoginController->registration()
+ 6 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-15 11:43:20 --> password_hash(): Passing null to parameter #1 ($password) of type string is deprecated
+in APPPATH\Controllers\LoginController.php on line 210.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'password_hash(): Passing null to parameter #1 ($password) of type string is deprecated', 'APPPATH\\Controllers\\LoginController.php', 210)
+ 2 APPPATH\Controllers\LoginController.php(210): password_hash(Object(SensitiveParameterValue), '2y')
+ 3 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\LoginController->registration()
+ 4 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 5 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-15 12:22:04 --> Undefined variable $rolename
+in APPPATH\Views\login\registration.php on line 134.
+ 1 APPPATH\Views\login\registration.php(134): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $rolename', 'APPPATH\\Views\\login\\registration.php', 134)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\login\\registration.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('login/registration', [], true)
+ 5 APPPATH\Controllers\LoginController.php(219): view('login/registration', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\LoginController->registration()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-15 12:24:17 --> Undefined variable $rolename
+in APPPATH\Views\login\registration.php on line 134.
+ 1 APPPATH\Views\login\registration.php(134): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $rolename', 'APPPATH\\Views\\login\\registration.php', 134)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\login\\registration.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('login/registration', [], true)
+ 5 APPPATH\Controllers\LoginController.php(166): view('login/registration', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\LoginController->registration()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-15 12:24:41 --> Creation of dynamic property App\Controllers\LoginController::$data is deprecated
+in APPPATH\Controllers\LoginController.php on line 139.
+ 1 APPPATH\Controllers\LoginController.php(139): CodeIgniter\Debug\Exceptions->errorHandler(8192, 'Creation of dynamic property App\\Controllers\\LoginController::$data is deprecated', 'APPPATH\\Controllers\\LoginController.php', 139)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\LoginController->registration()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-15 12:36:14 --> Invalid file: layouts/footer.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('layouts/footer.php')
+ 2 SYSTEMPATH\View\View.php(429): CodeIgniter\View\View->render('layouts/footer', null, true)
+ 3 APPPATH\Views\login\registration.php(177): CodeIgniter\View\View->include('layouts/footer')
+ 4 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\login\\registration.php')
+ 5 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('login/registration', [], true)
+ 7 APPPATH\Controllers\LoginController.php(176): view('login/registration', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\LoginController->registration()
+ 9 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+10 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-15 13:40:46 --> Undefined variable $roleId
+in APPPATH\Controllers\LoginController.php on line 157.
+ 1 APPPATH\Controllers\LoginController.php(157): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $roleId', 'APPPATH\\Controllers\\LoginController.php', 157)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\LoginController->registration()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-15 13:41:55 --> Undefined variable $role_id
+in APPPATH\Controllers\LoginController.php on line 195.
+ 1 APPPATH\Controllers\LoginController.php(195): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $role_id', 'APPPATH\\Controllers\\LoginController.php', 195)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\LoginController->registration()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-15 13:42:15 --> Undefined variable $role_id
+in APPPATH\Controllers\LoginController.php on line 195.
+ 1 APPPATH\Controllers\LoginController.php(195): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $role_id', 'APPPATH\\Controllers\\LoginController.php', 195)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\LoginController->registration()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-15 14:21:18 --> Invalid file: pages/error.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pages/error.php')
+ 2 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/error', [], true)
+ 3 APPPATH\Controllers\Main.php(42): view('pages/error', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Main->index()
+ 5 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-15 14:21:40 --> Invalid file: pages/error.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pages/error.php')
+ 2 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/error', [], true)
+ 3 APPPATH\Controllers\Main.php(42): view('pages/error', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Main->index()
+ 5 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-15 14:21:58 --> Invalid file: pages/error.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pages/error.php')
+ 2 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/error', [], true)
+ 3 APPPATH\Controllers\Main.php(42): view('pages/error', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Main->index()
+ 5 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-15 14:22:00 --> DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated
+in APPPATH\Controllers\Table.php on line 33.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated', 'APPPATH\\Controllers\\Table.php', 33)
+ 2 APPPATH\Controllers\Table.php(33): DateTime->__construct(null)
+ 3 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Table->index()
+ 4 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Table))
+ 5 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-15 14:22:01 --> DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated
+in APPPATH\Controllers\Rolespermission.php on line 37.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated', 'APPPATH\\Controllers\\Rolespermission.php', 37)
+ 2 APPPATH\Controllers\Rolespermission.php(37): DateTime->__construct(null)
+ 3 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Rolespermission->index()
+ 4 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rolespermission))
+ 5 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-15 14:22:04 --> Invalid file: pages/error.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pages/error.php')
+ 2 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/error', [], true)
+ 3 APPPATH\Controllers\Main.php(42): view('pages/error', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Main->index()
+ 5 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-15 14:22:08 --> Invalid file: pages/error.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pages/error.php')
+ 2 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/error', [], true)
+ 3 APPPATH\Controllers\Main.php(42): view('pages/error', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Main->index()
+ 5 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-15 14:22:15 --> Invalid file: pages/error.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pages/error.php')
+ 2 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/error', [], true)
+ 3 APPPATH\Controllers\Main.php(42): view('pages/error', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Main->index()
+ 5 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-15 14:22:24 --> Invalid file: pages/error.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pages/error.php')
+ 2 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/error', [], true)
+ 3 APPPATH\Controllers\Main.php(42): view('pages/error', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Main->index()
+ 5 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-15 14:22:25 --> Invalid file: pages/error.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pages/error.php')
+ 2 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/error', [], true)
+ 3 APPPATH\Controllers\Main.php(42): view('pages/error', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Main->index()
+ 5 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-15 14:22:38 --> Invalid file: pages/error.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pages/error.php')
+ 2 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/error', [], true)
+ 3 APPPATH\Controllers\Main.php(42): view('pages/error', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Main->index()
+ 5 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-15 14:24:05 --> Invalid file: pages/error.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pages/error.php')
+ 2 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/error', [], true)
+ 3 APPPATH\Controllers\Main.php(42): view('pages/error', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Main->index()
+ 5 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-15 14:25:08 --> Invalid file: pages/error.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pages/error.php')
+ 2 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/error', [], true)
+ 3 APPPATH\Controllers\Main.php(42): view('pages/error', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Main->index()
+ 5 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-15 14:25:11 --> Invalid file: pages/error.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pages/error.php')
+ 2 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/error', [], true)
+ 3 APPPATH\Controllers\Main.php(42): view('pages/error', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Main->index()
+ 5 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-15 14:25:18 --> Invalid file: pages/error.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pages/error.php')
+ 2 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/error', [], true)
+ 3 APPPATH\Controllers\Main.php(42): view('pages/error', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Main->index()
+ 5 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-15 14:25:45 --> DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated
+in APPPATH\Controllers\Branchlist.php on line 31.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated', 'APPPATH\\Controllers\\Branchlist.php', 31)
+ 2 APPPATH\Controllers\Branchlist.php(31): DateTime->__construct(null)
+ 3 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Branchlist->index()
+ 4 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Branchlist))
+ 5 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-15 14:25:48 --> Invalid file: pages/error.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pages/error.php')
+ 2 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/error', [], true)
+ 3 APPPATH\Controllers\Main.php(42): view('pages/error', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Main->index()
+ 5 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-15 14:25:59 --> Invalid file: pages/error.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pages/error.php')
+ 2 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/error', [], true)
+ 3 APPPATH\Controllers\Main.php(42): view('pages/error', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Main->index()
+ 5 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-15 14:26:02 --> Invalid file: pages/error.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pages/error.php')
+ 2 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/error', [], true)
+ 3 APPPATH\Controllers\Main.php(42): view('pages/error', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Main->index()
+ 5 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-15 15:05:08 --> Invalid file: pages/error.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pages/error.php')
+ 2 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/error', [], true)
+ 3 APPPATH\Controllers\Main.php(42): view('pages/error', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Main->index()
+ 5 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-15 15:05:11 --> Invalid file: pages/error.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pages/error.php')
+ 2 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/error', [], true)
+ 3 APPPATH\Controllers\Main.php(42): view('pages/error', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Main->index()
+ 5 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-15 15:05:35 --> Invalid file: pages/error.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pages/error.php')
+ 2 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/error', [], true)
+ 3 APPPATH\Controllers\Main.php(42): view('pages/error', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Main->index()
+ 5 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-15 15:05:55 --> Invalid file: pages/error.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pages/error.php')
+ 2 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/error', [], true)
+ 3 APPPATH\Controllers\Main.php(42): view('pages/error', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Main->index()
+ 5 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-15 15:05:58 --> Invalid file: pages/error.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pages/error.php')
+ 2 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/error', [], true)
+ 3 APPPATH\Controllers\Main.php(42): view('pages/error', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Main->index()
+ 5 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-15 20:34:52 --> syntax error, unexpected token "return", expecting "function" or "const"
+in APPPATH\Controllers\LoginController.php on line 356.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(261): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\LoginController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(239): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\LoginController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\LoginController')
+ 4 SYSTEMPATH\CodeIgniter.php(846): class_exists('\\App\\Controllers\\LoginController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(453): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-15 20:42:27 --> There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 846.
+ 1 SYSTEMPATH\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(692): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Controllers\LoginController.php(338): CodeIgniter\Model->update('00001', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\LoginController->reset_password()
+ 5 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-15 20:45:47 --> There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 846.
+ 1 SYSTEMPATH\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(692): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Controllers\LoginController.php(338): CodeIgniter\Model->update('00001', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\LoginController->reset_password()
+ 5 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-15 20:46:49 --> There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 846.
+ 1 SYSTEMPATH\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(692): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Controllers\LoginController.php(340): CodeIgniter\Model->update('00001', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\LoginController->reset_password()
+ 5 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-15 20:46:59 --> There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 846.
+ 1 SYSTEMPATH\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(692): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Controllers\LoginController.php(340): CodeIgniter\Model->update('00001', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\LoginController->reset_password()
+ 5 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-15 20:48:57 --> There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 846.
+ 1 SYSTEMPATH\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(692): CodeIgniter\BaseModel->update(null, [])
+ 3 APPPATH\Controllers\LoginController.php(338): CodeIgniter\Model->update()
+ 4 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\LoginController->reset_password()
+ 5 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-15 21:44:28 --> Undefined variable $username
+in APPPATH\Controllers\LoginController.php on line 348.
+ 1 APPPATH\Controllers\LoginController.php(348): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $username', 'APPPATH\\Controllers\\LoginController.php', 348)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\LoginController->reset_password()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-15 21:47:54 --> syntax error, unexpected variable "$email", expecting ")"
+in APPPATH\Controllers\LoginController.php on line 350.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(261): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\LoginController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(239): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\LoginController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\LoginController')
+ 4 SYSTEMPATH\CodeIgniter.php(846): class_exists('\\App\\Controllers\\LoginController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(453): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()

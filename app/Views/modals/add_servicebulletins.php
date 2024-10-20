@@ -25,7 +25,7 @@
 
     <div class="mb-3 col-12 col-md-12 col-sm-12">
         <label for="date_published" class="form-label">Date Published</label><span style="color:red">*</span>
-        <input type="date" name="date_published" id="date_published" class="form-control" max="<?php echo date('Y-m-d'); ?>" placeholder="Enter Date Opened ...." autocomplete="off">
+        <input type="date" name="date_published" id="date_published" class="form-control"  placeholder="Enter Date Opened ...." autocomplete="off">
         <div id="date_published-error" class="error-message"></div>
     </div>
     <div class="mb-3 col-12 col-md-12 col-sm-12">

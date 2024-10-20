@@ -1,6 +1,5 @@
+<?php include('add_script.php');?>
 
-      
-      
       <!-- Begin page -->
         <div id="wrapper">
 
@@ -29,9 +28,9 @@
 
                     <!-- User box -->
                     <div class="user-box text-center">
-                        <img src="<?= base_url('public/assets/images/users/user-1.jpg') ?>" alt="user-img" title="Mat Helme" class="rounded-circle avatar-md">
+                        <img src="<?= base_url('public/assets/images/' . $session->get('login_profile'))?>" alt="user-img" title="Mat Helme" class="rounded-circle avatar-md">
                         <div class="dropdown">
-                            <a href="javascript: void(0);" class="dropdown-toggle h5 mb-1 d-block" data-bs-toggle="dropdown">Geneva Kennedy</a>
+                            <a href="javascript: void(0);" class="dropdown-toggle h5 mb-1 d-block" data-bs-toggle="dropdown"><?= $session->get('login_firstname') ?> <?= $session->get('login_lastname') ?></a>
                             <div class="dropdown-menu user-pro-dropdown">
 
                                 <!-- item-->
@@ -41,10 +40,10 @@
                                 </a>
 
                                 <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <!-- <a href="javascript:void(0);" class="dropdown-item notify-item">
                                     <i class="fe-settings me-1"></i>
                                     <span>Settings</span>
-                                </a>
+                                </a> -->
 
 
                                 <!-- item-->
@@ -56,21 +55,33 @@
 
                             </div>
                         </div>
-                        <p class="text-muted mb-0">Admin Head</p>
+                        <!-- <p class="text-muted mb-0">Admin Head</p> -->
                     </div>
 
                     <!--- Menu -->
                     <ul class="menu">
 
                         <li class="menu-title">Navigation</li>
-
                         <li class="menu-item">
+                            <a href="<?= base_url('Main') ?>" class="menu-link">
+                                <span class="menu-icon"><i class="mdi mdi-view-dashboard-outline"></i></span>
+                                <span class="menu-text"> Landing Page </span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="<?= base_url('Main') ?>" class="menu-link">
+                                <span class="menu-icon"><i class="mdi mdi-view-dashboard-outline"></i></span>
+                                <span class="menu-text"> Dashboard </span>
+                            </a>
+                        </li>
+
+                        <!-- <li class="menu-item">
                             <a href="#menuDashboards" data-bs-toggle="collapse" class="menu-link">
                                 <span class="menu-icon"><i class="mdi mdi-view-dashboard-outline"></i></span>
                                 <span class="menu-text"> Dashboard </span>
-                                <!-- <span class="badge bg-success rounded-pill ms-auto">4</span> -->
-                            </a>
-                            <div class="collapse" id="menuDashboards">
+                               
+                            </a> -->
+                            <!-- <div class="collapse" id="menuDashboards">
                                 <ul class="sub-menu">
                                     <li class="menu-item">
                                         <a href="<?= base_url('Main') ?>" class="menu-link">
@@ -80,35 +91,41 @@
                                   
                                 </ul>
                             </div>
-                        </li>
+                        </li> -->
 
                         <li class="menu-title">Main Pages</li>
-
+                        <?php if ($is_view_motorcyclelist == 1): ?>
                         <li class="menu-item">
                             <a href="<?= base_url('Motorcyclelist') ?>" class="menu-link">
                                 <span class="menu-icon"><i class="mdi mdi-folder-star-outline"></i></span>
                                 <span class="menu-text"> Motorcycle List </span>
                             </a>
                         </li>
+                        <?php endif; ?>
+                        <?php if ($is_view_3s_branchlist == 1): ?>
                         <li class="menu-item">
                             <a href="<?= base_url('Branchlist') ?>" class="menu-link">
                                 <span class="menu-icon"><i class="mdi mdi-folder-star-outline"></i></span>
                                 <span class="menu-text"> 3s Branch List </span>
                             </a>
                         </li>
-                      
+                        <?php endif; ?>
+                        <?php if ($is_view_Service_manual == 1): ?>
                         <li class="menu-item">
                             <a href="<?= base_url('Servicemanuals') ?>" class="menu-link">
                                 <span class="menu-icon"><i class="mdi mdi-folder-star-outline"></i></span>
                                 <span class="menu-text"> Service Manuals </span>
                             </a>
                         </li>
+                        <?php endif; ?>
+                        <?php if ($is_view_Service_bulletin == 1): ?>
                         <li class="menu-item">
                             <a href="<?= base_url('Servicebulletins') ?>" class="menu-link">
                                 <span class="menu-icon"><i class="mdi mdi-folder-star-outline"></i></span>
                                 <span class="menu-text"> Service Bulletins </span>
                             </a>
                         </li>
+                        <?php endif; ?>
                         <!-- <li class="menu-title">System Maintenance</li> -->
 
                       
@@ -121,22 +138,35 @@
                             </a>
                             <div class="collapse" id="menuTables">
                                 <ul class="sub-menu">
-
+                                <?php if ($is_view_Motorcycle_category == 1): ?>
                                     <li class="menu-item">
                                         <a href="<?= base_url('Motorcyclecategory') ?>" class="menu-link">
                                             <span class="menu-text">Motorcycle Category</span>
                                         </a>
                                     </li>
+                                    <?php endif; ?>
+                                    <?php if ($is_view_Location == 1): ?>
                                     <li class="menu-item">
                                         <a href="<?= base_url('Location') ?>" class="menu-link">
                                             <span class="menu-text">Location</span>
                                         </a>
                                     </li>
+                                    <?php endif; ?>
+                                    <?php if ($is_view_Users == 1): ?>
                                     <li class="menu-item">
                                         <a href="<?= base_url('Table') ?>" class="menu-link">
-                                            <span class="menu-text">Users Tables</span>
+                                            <span class="menu-text">Users Information</span>
                                         </a>
                                     </li>
+                                    <?php endif; ?>
+                                  
+                                    <?php if ($is_view_Roles_permission == 1): ?>
+                                    <li class="menu-item">
+                                        <a href="<?= base_url('Rolespermission') ?>" class="menu-link">
+                                            <span class="menu-text">Roles & Permission</span>
+                                        </a>
+                                    </li>
+                                    <?php endif; ?>
                                 </ul>
                             </div>
                         </li>
@@ -264,13 +294,13 @@
 
             <!-- Search Dropdown (for Mobile/Tablet) -->
             <li class="dropdown d-lg-none">
-                <a class="nav-link dropdown-toggle waves-effect waves-light arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                <!-- <a class="nav-link dropdown-toggle waves-effect waves-light arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                     <i class="ri-search-line font-22"></i>
-                </a>
+                </a> -->
                 <div class="dropdown-menu dropdown-menu-animated dropdown-lg p-0">
-                    <form class="p-3">
+                    <!-- <form class="p-3">
                         <input type="search" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
-                    </form>
+                    </form> -->
                 </div>
             </li>
        
@@ -304,7 +334,7 @@
             <!-- User Dropdown -->
             <li class="dropdown"> 
                 <a class="nav-link dropdown-toggle nav-user me-0 waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                    <img src="<?= base_url('public/assets/images/users/user-1.jpg')?>" alt="user-image" class="rounded-circle">
+                    <img src="<?= base_url('public/assets/images/' . $session->get('login_profile'))?>" alt="user-image" class="rounded-circle">
                     <span class="ms-1 d-none d-md-inline-block">
                     <?= $session->get('login_firstname') ?> <i class="mdi mdi-chevron-down"></i>
                     </span>
@@ -316,22 +346,22 @@
                     </div>
 
                     <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                    <a href="<?= base_url('Profile') ?>" class="dropdown-item notify-item">
                         <i class="fe-user"></i>
                         <span>My Account</span>
                     </a>
 
                     <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                    <!-- <a href="javascript:void(0);" class="dropdown-item notify-item">
                         <i class="fe-settings"></i>
                         <span>Settings</span>
-                    </a>
+                    </a> -->
 
                     <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                    <!-- <a href="javascript:void(0);" class="dropdown-item notify-item">
                         <i class="fe-lock"></i>
                         <span>Lock Screen</span>
-                    </a>
+                    </a> -->
 
                     <div class="dropdown-divider"></div>
 

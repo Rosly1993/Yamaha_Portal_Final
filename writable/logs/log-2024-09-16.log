@@ -1,0 +1,6 @@
+CRITICAL - 2024-09-16 21:04:27 --> Class "App\Models\Profile_model" not found
+in APPPATH\Controllers\Profile.php on line 18.
+ 1 SYSTEMPATH\CodeIgniter.php(858): App\Controllers\Profile->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()

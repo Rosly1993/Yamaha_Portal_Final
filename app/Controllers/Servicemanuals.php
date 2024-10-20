@@ -13,6 +13,7 @@ class Servicemanuals extends BaseController
     protected $session;
     protected $servicemanuals_model;
     protected $data;
+    protected $db; // Declare the $db property
 
     public function __construct()
     {
@@ -20,6 +21,7 @@ class Servicemanuals extends BaseController
         $this->session = session();
         $this->servicemanuals_model = new servicemanuals_model();
         $this->data = ['session' => $this->session];
+        $this->db = \Config\Database::connect(); // Initialize the database connection
     }
 // get drop down  category and model type
 public function getModelcodes()
@@ -62,19 +64,68 @@ public function getModelnames()
 
 
     public function index()
+
     {
-        $this->data['page_title'] = "Servicemanuals";
-        return view('pages/servicemanuals', $this->data);
-    }
+        $session = \Config\Services::session();
+        $roles = $this->session->get('login_role_id');
+        $lastUpdateDate =$session->get('login_last_update_date');
+
+         // Ensure DateTime is used from global namespace
+         $lastUpdateDateTime = new \DateTime($lastUpdateDate);
+         $expiryDate = clone $lastUpdateDateTime;
+         $expiryDate->modify('+90 days');
+         $today = new \DateTime();
+ 
+         // Calculate the interval
+         $interval = $today->diff($expiryDate);
+ 
+         // Determine the number of days remaining
+         $daysRemaining = $today > $expiryDate ? -$interval->days : $interval->days;
+
+        // Get page access from the database using the query builder
+        $builder = $this->db->table('tbl_roles_permission');
+        $query = $builder->getWhere([
+            'page_name' => 'Service_manual',
+            'role_id' => $roles
+        ]);
+
+        // Get the result as an array
+        $result_area = $query->getRowArray();
+
+        if($daysRemaining < 1){
+            // If the password has expired
+            $this->data['page_title'] = "Expired";
+            return view('pages/changepassword', $this->data);
+    
+          }elseif(isset($result_area['is_view']) && $result_area['is_view'] == 1){
+            
+            $this->data['page_title'] = "Servicemanuals";
+            return view('pages/servicemanuals', $this->data);
+    
+            } else {
+                // Return the 404 error view if access is not allowed
+                return view('errors/html/error_403');
+            }
+        }
+
+  
      // for Audit Trail
      private function logActivity($username, $activity, $data)
      {
          $logModel = new \App\Models\LogModel();
          $details = json_encode($data); // Convert data array to JSON string
+
+           // Get the IP address of the user
+           $ip_address = $this->request->getIPAddress();
+           // Convert IPv6 loopback address (::1) to IPv4 loopback (127.0.0.1)
+              if ($ip_address == '::1') {
+                  $ip_address = '127.0.0.1';
+              }
      
          $logData = [
              'username' => $username,
              'activity' => $activity,
+             'ip_address' => $ip_address, // Log the IP address
              'details' => $details,
              'date_record' => date('Y-m-d H:i:s'),
          ];
@@ -183,18 +234,27 @@ public function getModelnames()
      {
          $outputFilePath = $pdfFilePath; // Overwrite the original file
      
+         // Path to the watermark image
+         $watermarkImagePath = base_url('public/assets/uploads/Confidential.png');
+     
          $pdf = new class extends Fpdi {
-             public function Rotate($angle, $x = '', $y = '') {
-                 if ($x === '') {
-                     $x = $this->GetX();
-                 }
-                 if ($y === '') {
-                     $y = $this->GetY();
-                 }
-                 $this->_out('q');
-                 $this->_out('1 0 0 1 ' . $x . ' ' . $y . ' cm');
-                 $this->_out(sprintf('%.2f 0 0 %.2f 0 0 cm', cos($angle * M_PI / 180), sin($angle * M_PI / 180)));
-                 $this->_out(sprintf('0 0 1 0 %.2f %.2f cm', -$x, -$y));
+             private $extgstates = [];
+     
+             // Set transparency for watermark
+             public function SetAlpha($alpha, $bm='Normal') {
+                 // Define blend mode and transparency
+                 $gs = $this->AddExtGState(['ca' => $alpha, 'CA' => $alpha]);
+                 $this->SetExtGState($gs);
+             }
+     
+             public function AddExtGState($parms) {
+                 $n = count($this->extgstates) + 1;
+                 $this->extgstates[$n]['parms'] = $parms;
+                 return $n;
+             }
+     
+             public function SetExtGState($gs) {
+                 $this->_out(sprintf('/GS%d gs', $gs));
              }
          };
      
@@ -209,17 +269,21 @@ public function getModelnames()
              $pdf->AddPage($size['orientation'], [$size['width'], $size['height']]);
              $pdf->useTemplate($tplIdx);
      
-             // Add the watermark
-             $pdf->SetFont('Arial', 'B', 50);
-             $pdf->SetTextColor(240, 90, 126);
+             // Set opacity for the watermark
+             $pdf->SetAlpha(0.5); // Adjust opacity here (0.0 = fully transparent, 1.0 = fully opaque)
      
-             // Set position for bottom left corner
-             $xPos = 10; // 10 units from the left edge
-             $yPos = $size['height'] - 20; // 20 units above the bottom edge
+             // Add the watermark image in the center of the page
+             $watermarkWidth = 100;  // Adjust the width of the watermark image
+             $watermarkHeight = 100;  // Adjust the height of the watermark image
      
-             // Place the watermark text
-             $pdf->SetXY($xPos, $yPos);
-             $pdf->Text($xPos, $yPos, 'Confidential');
+             $xPos = ($size['width'] - $watermarkWidth) / 2; // Center horizontally
+             $yPos = ($size['height'] - $watermarkHeight) / 2; // Center vertically
+     
+             // Add PNG watermark
+             $pdf->Image($watermarkImagePath, $xPos, $yPos, $watermarkWidth, $watermarkHeight, 'PNG');
+     
+             // Reset opacity to normal for the rest of the content
+             $pdf->SetAlpha(1);
          }
      
          // Output the new PDF to the same path, overwriting the original file
@@ -227,17 +291,8 @@ public function getModelnames()
      
          return basename($outputFilePath); // Return the file name
      }
-
-
-    // public function edit($id)
-    // {
-    //     $data = $this->servicemanuals_model->find($id);
-    //     if ($data) {
-    //         return $this->response->setJSON(['success' => true, 'data' => $data]);
-    //     } else {
-    //         return $this->response->setJSON(['success' => false, 'message' => 'Data not found']);
-    //     }
-    // }
+     
+     
 
     public function edit($id)
     {
@@ -374,7 +429,7 @@ public function getModelnames()
                 if ($result) {
                     // Log the deactivation action with full details
                     $session = session();
-                    $this->logActivity($session->get('login_username'), 'Deleted Service Bulletins', $motorcycleData);
+                    $this->logActivity($session->get('login_username'), 'Deleted Service Manual', $motorcycleData);
     
                     return $this->response->setJSON(['success' => true]);
                 } else {

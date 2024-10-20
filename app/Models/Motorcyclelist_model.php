@@ -15,24 +15,36 @@ class Motorcyclelist_model extends Model
     
 
     public function getDataWithModelType()
-    {
-        // Build the query
-        $builder = $this->builder();
-        // $builder->select('tbl_motorcyclelist.*');
-        $builder->select('tbl_motorcyclelist.IndexKey,tbl_motorcyclelist.is_active,tbl_motorcyclelist.pet_name,tbl_motorcyclelist.model_code,tbl_motorcyclelist.model_name,tbl_motorcyclelist.created_by,tbl_motorcyclelist.created_at,tbl_motorcyclelist.updated_by,tbl_motorcyclelist.updated_at, tbl_motorcycle_category.model_type, tbl_motorcycle_category.category');
-        $builder->join('tbl_motorcycle_category', 'tbl_motorcyclelist.category_id = tbl_motorcycle_category.IndexKey', 'left');
-        $query = $builder->get();
-
-        return $query->getResultArray();
-    }
+{
+    // Build the query
+    $builder = $this->builder();
+    
+    // Select the necessary columns
+    $builder->select('tbl_motorcyclelist.IndexKey, tbl_motorcyclelist.is_active, tbl_motorcyclelist.pet_name, tbl_motorcyclelist.model_code, tbl_motorcyclelist.model_name, tbl_motorcyclelist.created_by, tbl_motorcyclelist.created_at, tbl_motorcyclelist.updated_by, tbl_motorcyclelist.updated_at, tbl_motorcycle_category.model_type, tbl_motorcycle_category.category');
+    
+    // Join with the motorcycle category table
+    $builder->join('tbl_motorcycle_category', 'tbl_motorcyclelist.category_id = tbl_motorcycle_category.IndexKey', 'left');
+    
+    // Add condition to fetch only records where is_active = 1
+    $builder->where('tbl_motorcyclelist.is_active', 1);
+    
+    // Execute the query
+    $query = $builder->get();
+    
+    // Return the result as an array
+    return $query->getResultArray();
+}
 
  // Method to check if a record with the given data already exists
 
-    public function recordExists($data)
-    {
-        return $this->where($data)->first() !== null;
-    }
-
+ public function recordExists($data)
+ {
+     // Add the condition for is_active = 1
+     return $this->where($data)
+                 ->where('is_active', 1)
+                 ->first() !== null;
+ }
+ 
 //to join the motorcycle category 
 
     public function getMotorcycleById($id)

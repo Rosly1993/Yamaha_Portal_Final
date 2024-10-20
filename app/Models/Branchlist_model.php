@@ -20,6 +20,8 @@ class Branchlist_model extends Model
         $builder = $this->builder();
         $builder->select('tbl_3sbranch_list.IndexKey,tbl_3sbranch_list.updated_by,tbl_3sbranch_list.updated_at,tbl_3sbranch_list.date_opened, tbl_3sbranch_list.head_office, tbl_3sbranch_list.dealer_code, tbl_3sbranch_list.dealer_name, tbl_3sbranch_list.shop_type, tbl_3sbranch_list.is_active, tbl_3sbranch_list.created_by, tbl_3sbranch_list.created_at, tbl_3sbranch_list.updated_at, tbl_location.area, tbl_location.region, tbl_location.cluster_province');
         $builder->join('tbl_location', 'tbl_3sbranch_list.location_id = tbl_location.IndexKey', 'left');
+        // Add condition to fetch only records where is_active = 1
+        $builder->where('tbl_3sbranch_list.is_active', 1);
         $query = $builder->get();
     
         return $query->getResultArray();
@@ -29,9 +31,12 @@ class Branchlist_model extends Model
 
     public function recordExists($data)
     {
-        return $this->where($data)->first() !== null;
+        // Add the condition for is_active = 1
+        return $this->where($data)
+                    ->where('is_active', 1)
+                    ->first() !== null;
     }
-
+    
 //to join the motorcycle category 
 
     public function getBranchlistById($id)

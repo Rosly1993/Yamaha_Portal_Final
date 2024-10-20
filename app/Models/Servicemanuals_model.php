@@ -65,6 +65,7 @@ class Servicemanuals_model extends Model
 
         $builder->where('motorcycle_id', $motorcycle_id);
         $builder->where('year_published', $year_published);
+        $builder->where('is_active', 1);
 
         if ($id !== null) {
             $builder->where('IndexKey !=', $id); // Exclude the record being updated
@@ -83,6 +84,7 @@ class Servicemanuals_model extends Model
     {
         return $this->where('YEAR(created_at)', date('Y'))
                     ->where('MONTH(created_at)', date('m'))
+                    ->where('is_active', 1)
                     ->countAllResults();
     }
 }

@@ -76,10 +76,18 @@ public function getCategories()
      {
          $logModel = new \App\Models\LogModel();
          $details = json_encode($data); // Convert data array to JSON string
+
+         // Get the IP address of the user
+         $ip_address = $this->request->getIPAddress();
+         // Convert IPv6 loopback address (::1) to IPv4 loopback (127.0.0.1)
+            if ($ip_address == '::1') {
+                $ip_address = '127.0.0.1';
+            }
      
          $logData = [
              'username' => $username,
              'activity' => $activity,
+             'ip_address' => $ip_address, // Log the IP address
              'details' => $details,
              'date_record' => date('Y-m-d H:i:s'),
          ];
@@ -193,10 +201,16 @@ public function getCategories()
    
     
     public function getData()
-    {
-        $datas = $this->motorcyclecategory_model->findAll();
-        return $this->response->setJSON(['data' => $datas]);
-    }
+{
+    // Fetch data where is_active = 1
+    $datas = $this->motorcyclecategory_model
+                  ->where('is_active', 1)
+                  ->findAll();
+
+    // Return the data as JSON
+    return $this->response->setJSON(['data' => $datas]);
+}
+
   
     public function activate($id)
     {

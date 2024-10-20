@@ -27,7 +27,11 @@ class Location_model extends Model
 
     public function recordExists($data)
     {
-        return $this->where($data)->first() !== null;
+         // Add the condition for is_active = 1
+         return $this->where($data)
+         ->where('is_active', 1)
+         ->first() !== null;
+
     }
 
     public function update_recordExists($data, $id = null)

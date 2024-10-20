@@ -496,7 +496,8 @@
         <script src="<?= base_url('public/assets/libs/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js')?>"></script>
         <script src="<?= base_url('public/assets/libs/datatables.net-buttons/js/dataTables.buttons.min.js')?>"></script>
         <script src="<?= base_url('public/assets/libs/datatables.net-buttons-bs5/js/buttons.bootstrap5.min.js')?>"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.2.2/jszip.min.js"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.2.2/jszip.min.js"></script> -->
+        <script src="<?= base_url('public/assets/js/jszip.min.js')?>"></script>
         <script src="<?= base_url('public/assets/libs/datatables.net-buttons/js/buttons.html5.min.js')?>"></script>
         <script src="<?= base_url('public/assets/libs/datatables.net-buttons/js/buttons.flash.min.js')?>"></script>
         <script src="<?= base_url('public/assets/libs/datatables.net-buttons/js/buttons.print.min.js')?>"></script>
@@ -512,8 +513,11 @@
 
         <!-- Datatables init -->
         <script src="<?= base_url('public/assets/js/pages/datatables.init.js')?>"></script>
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="<?= base_url('public/assets/js/sweetalert2@11.js')?>"></script>
+        <!-- <script src="<?= base_url('public/assets/js/bootstrap-datepicker.min.js')?>"></script> -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
 
     </body>
 </html>

@@ -1,0 +1,18 @@
+CRITICAL - 2024-09-03 21:02:44 --> Undefined property: App\Controllers\Servicebulletins::$db
+in APPPATH\Controllers\Servicebulletins.php on line 36.
+ 1 APPPATH\Controllers\Servicebulletins.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Servicebulletins::$db', 'APPPATH\\Controllers\\Servicebulletins.php', 36)
+ 2 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Servicebulletins->index()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Servicebulletins))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-03 21:08:39 --> Undefined variable $is_add_Service_bulletin
+in APPPATH\Views\pages\servicebulletins.php on line 36.
+ 1 APPPATH\Views\pages\servicebulletins.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $is_add_Service_bulletin', 'APPPATH\\Views\\pages\\servicebulletins.php', 36)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\servicebulletins.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/servicebulletins', [], true)
+ 5 APPPATH\Controllers\Servicebulletins.php(50): view('pages/servicebulletins', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Servicebulletins->index()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Servicebulletins))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()

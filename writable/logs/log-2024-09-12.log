@@ -1,0 +1,16 @@
+CRITICAL - 2024-09-12 20:54:14 --> password_verify(): Passing null to parameter #1 ($password) of type string is deprecated
+in APPPATH\Controllers\Main.php on line 123.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'password_verify(): Passing null to parameter #1 ($password) of type string is deprecated', 'APPPATH\\Controllers\\Main.php', 123)
+ 2 APPPATH\Controllers\Main.php(123): password_verify(Object(SensitiveParameterValue), '$2y$10$vcXI1joVr/MX6pWcfy4Bhu/noZB6SzPZdwLKMz0uPq48kl8SNJGrO')
+ 3 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Main->changepassword()
+ 4 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 5 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-12 20:56:11 --> password_verify(): Passing null to parameter #1 ($password) of type string is deprecated
+in APPPATH\Controllers\Main.php on line 123.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'password_verify(): Passing null to parameter #1 ($password) of type string is deprecated', 'APPPATH\\Controllers\\Main.php', 123)
+ 2 APPPATH\Controllers\Main.php(123): password_verify(Object(SensitiveParameterValue), '$2y$10$vcXI1joVr/MX6pWcfy4Bhu/noZB6SzPZdwLKMz0uPq48kl8SNJGrO')
+ 3 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Main->changepassword()
+ 4 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 5 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()

@@ -1,5 +1,6 @@
 <?= $this->include('layouts/main_header') ?>
 <?= $this->include('layouts/main_sidebar') ?>
+<?php include('./app/views/layouts/add_script.php'); ?>
 
                 <div class="content">
 
@@ -29,13 +30,13 @@
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-body">
-
-              
                                         <p class="text-muted font-13 mb-4">
                                            <!-- Button trigger modal -->
+                                           <?php if ($is_add_motorcyclelist == 1): ?>
                                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                            <i class="fa fa-plus">&nbsp;&nbsp;</i> Add New MC List
                                             </button>
+                                            <?php endif; ?>
                                         </p>
 
                                         <table id="items_table" class="table table-striped dt-responsive nowrap w-100">
@@ -70,18 +71,28 @@
                         <!-- end row-->                      
                     </div> <!-- container -->
                 </div> <!-- content -->
-
+<script>
+     function goBack() {
+            history.back();
+        }
+</script>
 
                 <div id="data-table-url" data-url="<?= base_url('Motorcyclelist/getData') ?>"></div>
                 <div id="url-base" data-url="<?= site_url('Motorcyclelist/') ?>"></div>
                 <div id="url-base1" data-url="<?= site_url('Motorcyclecategory/') ?>"></div>
+                <div id="is_edit" data-value="<?php echo $is_edit_motorcyclelist; ?>"></div>
+                <div id="is_delete" data-value="<?php echo $is_delete_motorcyclelist; ?>"></div>
+
                 <?= $this->include('modals/add_mclist') ?>
                 <?= $this->include('modals/edit_mclist') ?>
                 <?= $this->include('layouts/main_footer') ?>   
+             
                 <script>
                 var dataTableUrl = '<?= base_url('Motorcyclelist/getData') ?>';
                 var baseURL = '<?= site_url('Motorcyclelist/') ?>';
                 var base_URL = '<?= site_url('Motorcyclecategory/') ?>';
+                var is_edit = $('#is_edit').data('value'); // Use .data() to get the value of data attribute
+                var is_delete = $('#is_delete').data('value'); // Use .data() to get the value of data attribute
                 </script>
 
 

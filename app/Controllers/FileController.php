@@ -19,9 +19,17 @@ class FileController extends Controller
         $logModel = new LogModel();
         $details = json_encode($data);
 
+         // Get the IP address of the user
+         $ip_address = $this->request->getIPAddress();
+         // Convert IPv6 loopback address (::1) to IPv4 loopback (127.0.0.1)
+            if ($ip_address == '::1') {
+                $ip_address = '127.0.0.1';
+            }
+
         $logData = [
             'username' => $username,
             'activity' => $activity,
+            'ip_address' => $ip_address, // Log the IP address
             'details' => $details,
             'date_record' => date('Y-m-d H:i:s'),
         ];

@@ -1,0 +1,11 @@
+CRITICAL - 2024-10-06 16:55:12 --> Undefined variable $session
+in APPPATH\Views\login\login.php on line 905.
+ 1 APPPATH\Views\login\login.php(905): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $session', 'APPPATH\\Views\\login\\login.php', 905)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\login\\login.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('login/login', [], true)
+ 5 APPPATH\Controllers\LoginController.php(80): view('login/login', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\LoginController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()

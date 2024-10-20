@@ -19,6 +19,7 @@ class Servicebulletins_model extends Model
         // Example query to check if record exists
         return $this->where('title', $title)
                     ->where('reference_number', $reference_number)
+                    ->where('is_active', 1)
                     ->first() !== null;
     }
     
@@ -44,6 +45,7 @@ class Servicebulletins_model extends Model
     {
         return $this->where('YEAR(created_at)', date('Y'))
                     ->where('MONTH(created_at)', date('m'))
+                    ->where('is_active', 1)
                     ->countAllResults();
     }
     

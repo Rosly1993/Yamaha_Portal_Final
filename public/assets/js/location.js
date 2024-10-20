@@ -2,6 +2,16 @@ $(document).ready(function () {
     // Get the URL from the data attribute
     var baseURL = $('#url-base').data('url');
     var url = $('#data-table-url').data('url');
+    var is_edit = $('#is_edit').data('value'); // Correctly get the value
+    var is_delete = $('#is_delete').data('value'); // Correctly get the value
+
+    // Display or hide the edit button based on is_edit value
+    if (is_edit == 0) {
+        $('.edit-btn').hide();
+    } else if (is_edit == 1) {
+        $('.edit-btn').show();
+    }
+
 
     var table = $('#items_table').DataTable({
         "ajax": {
@@ -29,22 +39,29 @@ $(document).ready(function () {
                 className: 'table-cell text-center font-size-14',
                 render: function (data, type, row) {
                     return data == 1 ? 
-                        '<button class="btn btn-success">Active</button>' : 
-                        '<button class="btn btn-danger">Inactive</button>';
+                        '<span class="badge label-table bg-success">Active</span>' : 
+                        '<span class="badge label-table bg-secondary text-light">Inactive</span>';
                 }
             },
             {
                 data: null,
                 className: 'table-cell text-center font-size-14',
+                responsivePriority: 1, // Ensures this column stays visible
                 render: function (data, type, row) {
-                    let buttons = '<a class="btn-primary edit-btn"><i class="fas fa-user-edit"></i></a>';
+                    let buttons = '';
             
-                    if (row.is_active == 0) {
-                        buttons += '<a class="btn-danger activate-btn"><i class="fas fa-power-off"></i></a>';
+                    if (is_edit == 1) { // Show edit button based on is_edit
+                        buttons += '<a class="btn-primary edit-btn"><i class="fas fa-edit"></i></a>';
                     }
-            
-                    if (row.is_active == 1) {
-                        buttons += '<a class="btn-success deactivate-btn"><i class="fas fa-power-off"></i></a>';
+
+                    if (is_delete == 1) { // Show activate/deactivate buttons based on is_delete
+                        if (row.is_active == 0) {
+                            buttons += '<a class="btn-danger activate-btn"><i class="fas fa-trash"></i></a>';
+                        }
+
+                        if (row.is_active == 1) {
+                            buttons += '<a class="btn-success deactivate-btn"><i class="fas fa-trash"></i></a>';
+                        }
                     }
             
                     return buttons;
@@ -340,22 +357,28 @@ function safeTrim(value) {
       });
   });
 
-
-  // Deactivate button click
-  $('#items_table tbody').on('click', '.deactivate-btn', function () {
+ // Deactivate button click
+ $('#items_table tbody').on('click', '.deactivate-btn', function () {
     var data = table.row($(this).parents('tr')).data();
     var id = data.IndexKey;
 
     Swal.fire({
         title: 'Are you sure?',
-        text: "Your record will be deactivated!",
-        icon: 'warning',
+        text: "Type 'Confirm' to delete your record!",
+        input: 'text',
+        inputPlaceholder: 'Type Confirm',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, deactivate it!'
+        confirmButtonText: 'Delete',
+        preConfirm: (inputValue) => {
+            if (inputValue !== 'Confirm') {
+                Swal.showValidationMessage('You need to type "Confirm" to proceed!');
+            }
+            return inputValue;
+        }
     }).then((result) => {
-        if (result.isConfirmed) {
+        if (result.isConfirmed && result.value === 'Confirm') {
             $.ajax({
                 url: baseURL + 'deactivate/' + id,
                 method: 'GET',
@@ -363,8 +386,8 @@ function safeTrim(value) {
                 success: function (response) {
                     if (response.success) {
                         Swal.fire(
-                            'Deactivated!',
-                            'Your record has been deactivated.',
+                            'Deleted!',
+                            'Your record has been deleted.',
                             'success'
                         );
                         table.ajax.reload();
@@ -380,7 +403,7 @@ function safeTrim(value) {
         }
     });
 });
-  
+
 
 
 });

@@ -35,7 +35,7 @@
 }
 .delete-btn {
 
-    color:#FF6969 ;
+    color:#D91656 ;
     font-size: 20px;
 
 }
@@ -47,7 +47,20 @@
 }
 .deactivate-btn {
 
-    color:#FF6969 ;
+    color:#D91656 ;
+    font-size: 20px;
+
+}
+
+.lock-btn {
+
+    color:#40A578 ;
+    font-size: 20px;
+
+}
+.unlock-btn {
+
+    color:#D91656 ;
     font-size: 20px;
 
 }
@@ -108,4 +121,11 @@
 
 .btn-excel:hover, .btn-print:hover, .btn-copy:hover {
     opacity: 0.8; /* Optional: Add some opacity on hover */
+}
+.confidential {
+    background-color: #FF7777;
+}
+
+.non-confidential {
+    background-color: #50B498;
 }

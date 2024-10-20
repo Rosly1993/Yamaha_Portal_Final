@@ -1,5 +1,7 @@
 <?= $this->include('layouts/main_header') ?>
 <?= $this->include('layouts/main_sidebar') ?>
+<?php include('./app/views/layouts/add_script.php'); ?>
+
 
                 <div class="content">
 
@@ -33,9 +35,11 @@
               
                                         <p class="text-muted font-13 mb-4">
                                            <!-- Button trigger modal -->
+                                           <?php if ($is_add_Location == 1): ?>
                                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                            <i class="fa fa-plus">&nbsp;&nbsp;</i> Add New Location
                                             </button>
+                                            <?php endif; ?>
                                         </p>
 
                                         <table id="items_table" class="table table-striped dt-responsive nowrap w-100">
@@ -72,12 +76,16 @@
 
                 <div id="data-table-url" data-url="<?= base_url('Location/getData') ?>"></div>
                 <div id="url-base" data-url="<?= site_url('Location/') ?>"></div>
+                <div id="is_edit" data-value="<?php echo $is_edit_Location; ?>"></div>
+                <div id="is_delete" data-value="<?php echo $is_delete_Location; ?>"></div>
                 <?= $this->include('modals/add_location') ?>
                 <?= $this->include('modals/edit_location') ?>
                 <?= $this->include('layouts/main_footer') ?>   
                 <script>
                 var dataTableUrl = '<?= base_url('Location/getData') ?>';
                 var baseURL = '<?= site_url('Location/') ?>';
+                var is_edit = $('#is_edit').data('value'); // Use .data() to get the value of data attribute
+                var is_delete = $('#is_delete').data('value'); // Use .data() to get the value of data attribute
                 </script>
 
                 <script src="<?= base_url('public/assets/js/location.js') ?>"></script>

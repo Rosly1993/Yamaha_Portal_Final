@@ -33,7 +33,7 @@
               
                                   
                                         <div class="row mb-4">
-                                        <div class="col-md-3">
+                                        <div class="col-md-2">
                                             <select id="filter-month" class="form-control">
                                                 <option value="1">January</option>
                                                 <option value="2">February</option>
@@ -49,7 +49,7 @@
                                                 <option value="12">December</option>
                                             </select>
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-md-2">
                                             <input type="text" id="filter-year" class="form-control"  >
                                         </div>
                                     </div>
@@ -59,6 +59,7 @@
                                             <thead class="table_header">
                                                 <tr>
                                                     <th>ID</th>
+                                                    <th>IP Address</th>
                                                     <th>Username</th>
                                                     <th>Activity</th>
                                                     <th>Details</th>

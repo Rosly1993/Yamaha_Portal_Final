@@ -1,5 +1,7 @@
 <?= $this->include('layouts/main_header') ?>
 <?= $this->include('layouts/main_sidebar') ?>
+<?php include('./app/views/layouts/add_script.php'); ?>
+
 
                 <div class="content">
 
@@ -33,9 +35,11 @@
               
                                         <p class="text-muted font-13 mb-4">
                                            <!-- Button trigger modal -->
+                                           <?php if ($is_add_Service_bulletin == 1): ?>
                                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                            <i class="fa fa-plus">&nbsp;&nbsp;</i> Add New Service Bulletin
                                             </button>
+                                            <?php endif; ?>
                                         </p>
 
                                         <table id="items_table" class="table table-striped dt-responsive nowrap w-100">
@@ -45,8 +49,8 @@
                                                     <th>Title</th>
                                                     <th>Reference Number</th>
                                                     <th>Date Published</th>
-                                                    <th>Attachment</th>
-                                                    <th>Download</th>
+                                                    <th>View Attachment</th>
+                                                    <th>Download Attachment</th>
                                                     <th>Created By</th>
                                                     <th>Date Created</th>
                                                     <th>Updated By</th>
@@ -75,42 +79,21 @@
                 <div id="data-table-url" data-url="<?= base_url('Servicebulletins/getData') ?>"></div>
                 <div id="url-base" data-url="<?= site_url('Servicebulletins/') ?>"></div>
                 <div id="url-base1" data-url="<?= site_url('/') ?>"></div>
+                <div id="is_edit" data-value="<?php echo $is_edit_Service_bulletin; ?>"></div>
+                <div id="is_delete" data-value="<?php echo $is_delete_Service_bulletin; ?>"></div>
+
                 <?= $this->include('modals/add_servicebulletins') ?>
                 <?= $this->include('modals/edit_servicebulletins') ?>
+                <?= $this->include('modals/view_manual') ?>
                 <?= $this->include('layouts/main_footer') ?>   
                 <script>
                 var dataTableUrl = '<?= base_url('Servicebulletins/getData') ?>';
                 var baseURL = '<?= site_url('Servicebulletins/') ?>';
                 var base_URL = '<?= site_url('/') ?>';
+                var is_edit = $('#is_edit').data('value'); // Use .data() to get the value of data attribute
+                var is_delete = $('#is_delete').data('value'); // Use .data() to get the value of data attribute
                 </script>
 
                 <script src="<?= base_url('public/assets/js/servicebulletins.js') ?>"></script>
-              
-                <style>
-                .confidential {
-                    background-color: red;
-                }
-
-                .non-confidential {
-                    background-color: green;
-                }
-
-                </style>
-                <!-- Modal Structure -->
-                <div class="modal fade" id="attachmentModal" tabindex="-1" aria-labelledby="attachmentModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-lg" style="max-width: 95%;">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 style="color: white; text-align: center" class="modal-title" id="attachmentModalLabel">Service Manual Attachment's Viewing</h4>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body p-0">
-                                <!-- PDF will be displayed in this iframe -->
-                                <iframe id="attachmentPreview" src="" style="width: 100%; height: 100vh;" frameborder="0"></iframe>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+     
+  

@@ -24,28 +24,44 @@ $routes->set404Override();
 
 $routes->get('/', 'LoginController::index',['filter' => 'authenticated']);
 $routes->get('/registration', 'LoginController::registration',['filter' => 'authenticated']);
+$routes->get('/request_otp', 'LoginController::request_otp',['filter' => 'authenticated']);
+$routes->get('/reset_password', 'LoginController::reset_password',['filter' => 'authenticated']);
 $routes->get('LoginController', 'LoginController::index',['filter' => 'authenticated']);
 $routes->get('LoginController/(:segment)', 'LoginController::$1',['filter' => 'authenticated']);
 $routes->match(['post'], '/registration', 'LoginController::registration',['filter' => 'authenticated']);
+$routes->match(['post'], '/request_otp', 'LoginController::request_otp',['filter' => 'authenticated']);
+$routes->match(['post'], '/reset_password', 'LoginController::reset_password',['filter' => 'authenticated']);
 $routes->match(['post'], '/login', 'LoginController::index',['filter' => 'authenticated']);
 $routes->get('/logout', 'LoginController::logout');
+$routes->get('getHeadoffice', 'LoginController::getHeadoffice');
+$routes->get('getBranchname', 'LoginController::getBranchname');
+$routes->get('getArea', 'LoginController::getArea');
 
 $routes->group('Main', ['filter'=>'authenticate'], static function($routes){
     $routes->get('', 'Main::index');
     $routes->get('(:segment)', 'Main::$1');
     $routes->get('(:segment)/(:any)', 'Main::$1/$2');
     $routes->match(['post'], 'user_edit/(:num)', 'Main::user_edit/$1');
-    
+    $routes->match(['post'], 'changepassword', 'Main::changepassword');
+
+ 
 });
+
+
 $routes->group('Table', ['filter' => 'authenticate'], static function($routes) {
     $routes->get('', 'Table::index');  // Calls Table::index
     $routes->get('view/(:segment)', 'Table::view/$1');  // Calls Table::view($1)
     $routes->get('edit/(:segment)', 'Table::edit/$1');  // Calls Table::edit($1)
     $routes->get('activate/(:segment)', 'Table::activate/$1');  // Calls Table::delete($1)
     $routes->get('deactivate/(:segment)', 'Table::deactivate/$1');  // Calls Table::delete($1)
+    $routes->get('lock/(:segment)', 'Table::lock/$1');  // Calls Table::delete($1)
+    $routes->get('unlock/(:segment)', 'Table::unlock/$1');  // Calls Table::delete($1)
     $routes->post('add', 'Table::add');  // Calls Table::add
     $routes->post('update/(:segment)', 'Table::update/$1'); // Calls Table::update($1)
     $routes->get('getUsers', 'Table::getUsers');  // Calls Table::getUsers
+    $routes->get('getHeadoffice', 'Table::getHeadoffice');
+    $routes->get('getBranchname', 'Table::getBranchname');
+    $routes->get('getArea', 'Table::getArea');
 });
 
 $routes->group('Motorcyclelist', ['filter' => 'authenticate'], static function($routes) {
@@ -141,6 +157,39 @@ $routes->group('Activitylogs', ['filter' => 'authenticate'], static function($ro
     $routes->get('getData', 'Activitylogs::getData');  // Calls Motorcyclelist::getUsers
 });
 
+
+
+$routes->group('Rolespermission', ['filter' => 'authenticate'], static function($routes) {
+    $routes->get('', 'Rolespermission::index');  // Calls Rolespermission::index
+    $routes->get('view/(:segment)', 'Rolespermission::view/$1');  // Calls Rolespermission::view($1)
+    $routes->get('edit/(:segment)', 'Rolespermission::edit/$1');  // Calls Rolespermission::edit($1)
+    $routes->get('activate/(:segment)', 'Rolespermission::activate/$1');  // Calls Rolespermission::delete($1)
+    $routes->get('deactivate/(:segment)', 'Rolespermission::deactivate/$1');  // Calls Rolespermission::delete($1)
+    $routes->post('add', 'Rolespermission::add');  // Calls Rolespermission::add
+    $routes->post('update/(:segment)', 'Rolespermission::update/$1'); // Calls Rolespermission::update($1)
+    // $routes->post('update', 'Rolespermission::update');
+    $routes->get('getData', 'Rolespermission::getData');  // Calls Motorcyclelist::getUsers
+    $routes->get('getAreas', 'Rolespermission::getAreas');
+    $routes->get('getRegion', 'Rolespermission::getRegion');
+    $routes->get('getClusterProvince', 'Rolespermission::getClusterProvince');
+
+});
+
+
+$routes->group('Profile', ['filter' => 'authenticate'], static function($routes) {
+    $routes->get('', 'Profile::index');  // Calls Profile::index
+    $routes->get('view/(:segment)', 'Profile::view/$1');  // Calls Profile::view($1)
+    $routes->get('edit/(:segment)', 'Profile::edit/$1');  // Calls Profile::edit($1)
+    $routes->get('activate/(:segment)', 'Profile::activate/$1');  // Calls Profile::delete($1)
+    $routes->get('deactivate/(:segment)', 'Profile::deactivate/$1');  // Calls Profile::delete($1)
+    $routes->post('add', 'Profile::add');  // Calls Profile::add
+    $routes->post('update/(:segment)', 'Profile::update/$1'); // Calls Profile::update($1)
+    $routes->get('getData', 'Profile::getData');  // Calls Motorcyclelist::getUsers
+    $routes->get('getAreas', 'Profile::getAreas');
+    $routes->get('getRegion', 'Profile::getRegion');
+    $routes->get('getClusterProvince', 'Profile::getClusterProvince');
+
+});
 
 if (is_file(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
     require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
